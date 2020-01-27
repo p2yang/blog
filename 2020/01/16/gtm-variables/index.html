@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Google Tag Manager 实用自定义 Variable 和 Trigger"/>
+
+
+
+
+  <meta name="keywords" content="Google Tag Manager, 宁千阳博客" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="宁千阳博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://blog.p2yang.com/2020/01/16/gtm-variables/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Google Tag Manager 实用自定义 Variable 和 Trigger - 宁千阳博客 </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">宁千阳博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">宁千阳博客</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Google Tag Manager 实用自定义 Variable 和 Trigger
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-16
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/2020/01/16/gtm-variables/"
+             data-title="Google Tag Manager 实用自定义 Variable 和 Trigger">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#根据-CSS-Selector-获取目标元素"><span class="toc-text">根据 CSS Selector 获取目标元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义-GA-Event-Category-Event-Label-变量"><span class="toc-text">自定义 GA Event Category / Event Label 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义-Data-Layer-变量"><span class="toc-text">自定义 Data Layer 变量</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>单独为每个埋点建立一个个 Tag 和 Trigger, 未免太过麻烦。这里记录几个实用的自定义变量，以提高效率。</p>
+<a id="more"></a>
+<p>Google Tag Manager 支持多种类型的自定义变量，前端同学可自行选择使用哪些。</p>
+<h2 id="根据-CSS-Selector-获取目标元素"><a href="#根据-CSS-Selector-获取目标元素" class="headerlink" title="根据 CSS Selector 获取目标元素"></a>根据 CSS Selector 获取目标元素</h2><p>设置变量名为 <code>Find Closest</code>, 变量类型为 <code>Custom JavaScript</code>, 脚本内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target, selector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!target.matches(selector) &amp;&amp; !target.matches(<span class="string">'body'</span>)) &#123;</span><br><span class="line">      target = target.parentElement;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target.matches(selector) ? target : <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/gtm/gtm2-variable.png" alt="GTM Variable"></p>
+<p>下面会有具体应用。</p>
+<h2 id="自定义-GA-Event-Category-Event-Label-变量"><a href="#自定义-GA-Event-Category-Event-Label-变量" class="headerlink" title="自定义 GA Event Category / Event Label 变量"></a>自定义 GA Event Category / Event Label 变量</h2><p>在关联配置 GA 的 Event track 类型中，可以使用变量，而不用把值写死。同样是先命名变量，设置变量类型为 <code>Custom JavaScript</code>。<br>脚本内容示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> el = &#123;&#123;Find Closest&#125;&#125;(&#123;&#123;Click Element&#125;&#125;, <span class="string">'[data-label]'</span>);</span><br><span class="line">	<span class="keyword">return</span> el ? el.dataset.label : <span class="string">''</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>脚本中出现的 <code>\{\{Find Closest\}\}</code> 就是上面自定义的变量 <code>Find Closest</code>，双大括号是调用取值语法。<br>不同的是，<code>\{\{Click Element\}\}</code> 是 Google Tag Manager 内置变量，表示被点击的 DOM 元素。<br><code>selector</code> 可自行改写。</p>
+<p>该变量的作用是获取到被点击目标元素上的 <code>data-label</code> 值，没有则返回空字符串。</p>
+<h2 id="自定义-Data-Layer-变量"><a href="#自定义-Data-Layer-变量" class="headerlink" title="自定义 Data Layer 变量"></a>自定义 Data Layer 变量</h2><p>如果需要手动上报的话，这里可以新建一个 <code>Data Layer Variable</code> 类型的变量，所定义的值可以被 <code>window.dataLayer</code> 上报。示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：此处代码需要在自己的页面中添加</span></span><br><span class="line"><span class="built_in">window</span>.dataLayer.push(&#123;</span><br><span class="line">	<span class="string">'event'</span>: <span class="string">'track_custom_event'</span>,</span><br><span class="line">	<span class="string">'xxx'</span>: <span class="string">'待上报的值'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>其中 <code>xxx</code> 即为此处需要定义的 Data Layer Variable Name。</p>
+<p>再建立一个自定义事件变量，变量类型选 <code>Custom Event</code>。</p>
+<p>然后，可以建一个 <code>Custom Event</code> 类型的 Trigger 来响应手动上报事件。<br>其中 Event Name 可使用正则表达式，如：<code>[A-Z0-9_]+</code>。<br>注意，需要加一条匹配规则，用来排除官方的事件类型 - <code>gtm</code>，示图如下：</p>
+<p><img src="/images/gtm/gtm2-trigger.png" alt="GTM Trigger"></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://blog.p2yang.com">宁千阳</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://blog.p2yang.com/2020/01/16/gtm-variables/">http://blog.p2yang.com/2020/01/16/gtm-variables/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Google-Tag-Manager/">Google Tag Manager</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2020/01/19/webpack-dll/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Webpack DllPlugin 基本应用与实践</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2020/01/15/gtm-basic/">
+        <span class="next-text nav-default">Google Tag Manager 基本应用与实践</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2020
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">宁千阳</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

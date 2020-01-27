@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Node API - Querystring"/>
+
+
+
+
+  <meta name="keywords" content="node, 宁千阳博客" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="宁千阳博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://blog.p2yang.com/2018/01/04/node-querystring/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Node API - Querystring - 宁千阳博客 </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">宁千阳博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">宁千阳博客</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Node API - Querystring
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-04
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/2018/01/04/node-querystring/"
+             data-title="Node API - Querystring">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parse-爱-stringify"><span class="toc-text">parse 爱 stringify</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#querystring-parse-str-sep-eq-options"><span class="toc-text">querystring.parse(str[, sep[, eq[, options]]])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#querystring-stringify-obj-sep-eq-options"><span class="toc-text">querystring.stringify(obj[, sep[, eq[, options]]])</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#离开，还是留下？"><span class="toc-text">离开，还是留下？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#querystring-escape-str"><span class="toc-text">querystring.escape(str)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#querystring-unescape-str"><span class="toc-text">querystring.unescape(str)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p><code>querystring</code> 是一个实用的 URL query 字符串处理工具，可以序列化一串键值对字符串，也可以将对象转化成一段 <code>a=b&amp;c=d</code> 形式的字符串。总之，非常好用，尤其是处理跟url query相关参数的时候。</p>
+<a id="more"></a>
+<p>说明：本文是基于 <a href="mailto:node@9.3.0" target="_blank" rel="noopener">node@9.3.0</a> 整理。查看<a href="https://nodejs.org/docs/v9.3.0/api/querystring.html" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>在 node 环境下，我们可以直接 require 或 import，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>需要说明的是，npm上有一个 <a href="https://www.npmjs.com/package/qs" target="_blank" rel="noopener">qs</a> 包，跟querystring类似，但功能更强大，可以看看。</p>
+<p>node querystring 公开的有四个方法，我们来看一看。</p>
+<h2 id="parse-爱-stringify"><a href="#parse-爱-stringify" class="headerlink" title="parse 爱 stringify"></a>parse 爱 stringify</h2><p><code>parse</code>和<code>stringify</code>总是形影不离，在<code>JSON</code>中如此，这里也是一样。</p>
+<h3 id="querystring-parse-str-sep-eq-options"><a href="#querystring-parse-str-sep-eq-options" class="headerlink" title="querystring.parse(str[, sep[, eq[, options]]])"></a>querystring.parse(str[, sep[, eq[, options]]])</h3><p>可选参数有点多，先来介绍一下:</p>
+<ul>
+<li>str: <code>String</code>, 目标字符串;</li>
+<li>sep: <code>String</code>, str 中键值对间的分隔符，默认是<code>&amp;</code>;</li>
+<li>eq: <code>String</code>, str 中key和value间的分隔符，默认是<code>=</code>;</li>
+<li>options: <code>Object</code>, 包含三个属性：<ul>
+<li>decodeURIComponent: <code>Function</code>, 解码方法，默认使用<code>querystring.unescape()</code></li>
+<li>maxKeys: <code>Number</code>, 可以解析的最大key数目，默认是1000。设为0，则表示不限制数量。</li>
+</ul>
+</li>
+</ul>
+<p>示例如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">querystring.parse(<span class="string">'foo=bar&amp;abc=xyz&amp;abc=123'</span>)</span><br><span class="line"><span class="comment">/* Returns</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  foo: 'bar',</span></span><br><span class="line"><span class="comment">  abc: ['xyz', '123']</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：官方文档说，返回的对象不完全继承js的<code>Object</code>, 所以诸如<code>obj.toString</code>, <code>obj.hasOwnProperty</code>之类未定义的方法，无法使用哦～</p>
+<h3 id="querystring-stringify-obj-sep-eq-options"><a href="#querystring-stringify-obj-sep-eq-options" class="headerlink" title="querystring.stringify(obj[, sep[, eq[, options]]])"></a>querystring.stringify(obj[, sep[, eq[, options]]])</h3><p><code>sep</code>,<code>eq</code>同上，默认分别是<code>&amp;</code>，<code>=</code>.</p>
+<ul>
+<li>obj: <code>Object</code>, 目标对象</li>
+<li>options: <code>Object</code>, 包含一个方法<ul>
+<li>encodeURIComponent: <code>Function</code>, 编码方法，默认使用<code>querystring.escape()</code></li>
+</ul>
+</li>
+</ul>
+<p><code>obj</code>的属性有所限制，只能转化 <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>String[]</code>, <code>Number[]</code>, <code>Boolean[]</code>类型的的值，其他类型的值会被转化为空字符串。</p>
+<p>示例如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">querystring.stringify(&#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: [<span class="string">'qux'</span>, <span class="string">'quux'</span>], <span class="attr">corge</span>: <span class="string">''</span> &#125;);</span><br><span class="line"><span class="comment">// returns 'foo=bar&amp;baz=qux&amp;baz=quux&amp;corge='</span></span><br><span class="line"></span><br><span class="line">querystring.stringify(&#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: <span class="string">'qux'</span> &#125;, <span class="string">';'</span>, <span class="string">':'</span>);</span><br><span class="line"><span class="comment">// returns 'foo:bar;baz:qux'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="离开，还是留下？"><a href="#离开，还是留下？" class="headerlink" title="离开，还是留下？"></a>离开，还是留下？</h2><p><code>escape</code> or <code>unescape</code>，选择只取决于你。一般不怎么用。<br>官方有云，</p>
+<blockquote>
+<p>The querystring.escape() method is used by querystring.stringify() and <strong>is generally not expected to be used directly</strong>. It is exported primarily to allow application code to provide a replacement percent-encoding implementation if necessary by assigning querystring.escape to an alternative function.</p>
+</blockquote>
+<p>所以，用不用随你心意。我们这里就简单说下吧（反正写的都很简洁。。。）。</p>
+<h3 id="querystring-escape-str"><a href="#querystring-escape-str" class="headerlink" title="querystring.escape(str)"></a>querystring.escape(str)</h3><p>编码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">querystring.escape(<span class="string">'https://nodejs.org/dist/latest-v9.x/docs/api/querystring.html?nav=faq&amp;sa=sae'</span>)</span><br><span class="line"><span class="comment">// Returns 'https%3A%2F%2Fnodejs.org%2Fdist%2Flatest-v9.x%2Fdocs%2Fapi%2Fquerystring.html%3Fnav%3Dfaq%26sa%3Dsae'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="querystring-unescape-str"><a href="#querystring-unescape-str" class="headerlink" title="querystring.unescape(str)"></a>querystring.unescape(str)</h3><p>解码，与escape相反。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">querystring.unescape(<span class="string">'https%3A%2F%2Fnodejs.org%2Fdist%2Flatest-v9.x%2Fdocs%2Fapi%2Fquerystring.html%3Fnav%3Dfaq%26sa%3Dsae'</span>)</span><br><span class="line"><span class="comment">// Returns 'https://nodejs.org/dist/latest-v9.x/docs/api/querystring.html?nav=faq&amp;sa=sae'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说实话，之前从别人的文章中去看用法，总觉得捉急。md不写时间，不写版本，行文也不格式化，极易产生误解。后来总算明白了，别人嚼烂剩下，心里要有个谱儿。主动被动之间，不只有情趣！</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://blog.p2yang.com">宁千阳</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://blog.p2yang.com/2018/01/04/node-querystring/">http://blog.p2yang.com/2018/01/04/node-querystring/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/node/">node</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/01/10/opera-mini/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">关于 Opera Mini 开发的那些事儿</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/01/03/node-path/">
+        <span class="next-text nav-default">Node API - Path</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2020
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">宁千阳</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

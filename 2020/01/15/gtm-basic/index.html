@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Google Tag Manager 基本应用与实践"/>
+
+
+
+
+  <meta name="keywords" content="Google Tag Manager, 宁千阳博客" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="宁千阳博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://blog.p2yang.com/2020/01/15/gtm-basic/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Google Tag Manager 基本应用与实践 - 宁千阳博客 </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">宁千阳博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">宁千阳博客</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Google Tag Manager 基本应用与实践
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-15
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/2020/01/15/gtm-basic/"
+             data-title="Google Tag Manager 基本应用与实践">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-注册-Container"><span class="toc-text">1. 注册 Container</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装"><span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-建-Tag"><span class="toc-text">3. 建 Tag</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-关联-GA-配置"><span class="toc-text">3.1 关联 GA 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-新建变量"><span class="toc-text">3.2 新建变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-建-Trigger"><span class="toc-text">4. 建 Trigger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Preview-调试"><span class="toc-text">5. Preview 调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-发布"><span class="toc-text">6. 发布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>如果想了解网站用户的互动情况，我们该怎么统计？</p>
+<p>国际站的话可以选用 Google 家的 <code>gtag.js</code>, <code>analytics.js</code>，或者 <code>gtm.js</code> 进行开发。前两个的功能和使用方式基本一致，具体差别可参考下方的开发文档。<code>gtm.js</code> 就是本文要说的 Google Tag Manager 的 js 库。</p>
+<a id="more"></a>
+<p>Google Tag Manager (下文简称 “GTM”) 功能齐全，支持 Google 代码和第三方代码。相比于 <code>gtag.js</code> 和 <code>analytics.js</code> 代码侵入性更小，也是 Google 推荐使用的工具。</p>
+<p>话不多说，开始正文。</p>
+<h2 id="1-注册-Container"><a href="#1-注册-Container" class="headerlink" title="1. 注册 Container"></a>1. 注册 Container</h2><p>填好容器名，选择应用平台。容器名建议以应用平台来命名，这里我使用的是域名 <code>blog.p2yang.com</code>。</p>
+<p><img src="/images/gtm/gtm-container.png" alt="GTM Container"></p>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><p>注册完成后，会自动分配一个 <code>id</code>, 并且弹窗提示安装方法，将代码片段插入自己的页面即可。<br>页面加载时，会异步请求 <code>gtm.js</code> 库和相关配置，并且提供了浏览器禁止 js 脚本的弥补方法。</p>
+<p>这里摘录下代码段：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Google Tag Manager --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params">w,d,s,l,i</span>)</span>&#123;w[l]=w[l]||[];w[l].push(&#123;<span class="string">'gtm.start'</span>:</span></span><br><span class="line"><span class="javascript"><span class="keyword">new</span> <span class="built_in">Date</span>().getTime(),<span class="attr">event</span>:<span class="string">'gtm.js'</span>&#125;);<span class="keyword">var</span> f=d.getElementsByTagName(s)[<span class="number">0</span>],</span></span><br><span class="line"><span class="javascript">j=d.createElement(s),dl=l!=<span class="string">'dataLayer'</span>?<span class="string">'&amp;l='</span>+l:<span class="string">''</span>;j.async=<span class="literal">true</span>;j.src=</span></span><br><span class="line"><span class="javascript"><span class="string">'https://www.googletagmanager.com/gtm.js?id='</span>+i+dl;f.parentNode.insertBefore(j,f);</span></span><br><span class="line"><span class="javascript">&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'dataLayer'</span>,<span class="string">'GTM-NLZZ7XB'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Tag Manager --&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Google Tag Manager (noscript) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.googletagmanager.com/ns.html?id=GTM-TFMV3HS"</span></span></span><br><span class="line"><span class="tag"><span class="attr">height</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"0"</span> <span class="attr">style</span>=<span class="string">"display:none;visibility:hidden"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Tag Manager (noscript) --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>下一步，我们就可以针对性地进行埋点了。</p>
+<h2 id="3-建-Tag"><a href="#3-建-Tag" class="headerlink" title="3. 建 Tag"></a>3. 建 Tag</h2><p>这里是有 Google Analytics（以下称 GA） 处理和分析统计的数据，选择 <code>Google Analytics: Universal Analytics</code> 新建 Tag，如下图：<br><img src="/images/gtm/gtm-tag.png" alt="GTM Tag"></p>
+<h3 id="3-1-关联-GA-配置"><a href="#3-1-关联-GA-配置" class="headerlink" title="3.1 关联 GA 配置"></a>3.1 关联 GA 配置</h3><p>选择 <code>Track Type</code> 选择 <code>Event</code>; <code>Category</code>, <code>Action</code>, <code>Label</code> 的值便于识别即可，<code>Value</code> 建议填 <code>1</code>, 作为单词统计的基数。<br><img src="/images/gtm/gtm-tag-config.png" alt="GTM Tag Config"></p>
+<h3 id="3-2-新建变量"><a href="#3-2-新建变量" class="headerlink" title="3.2 新建变量"></a>3.2 新建变量</h3><p>然后，需要关联到 GA, 选择 <code>New Variable</code>, 配置 GA 的 Tracking ID （可在 <a href="https://analytics.google.com" target="_blank" rel="noopener">https://analytics.google.com</a> 个人管理中找到）。<br>变量创建一次后可以在侧边栏 <code>Variables</code> 进行管理。<br><img src="/images/gtm/gtm-tag-variable.png" alt="GTM Variable for GA"></p>
+<p>命名，保存。</p>
+<h2 id="4-建-Trigger"><a href="#4-建-Trigger" class="headerlink" title="4. 建 Trigger"></a>4. 建 Trigger</h2><p>创建好 Tag 后需要关联 Trigger。举个例子，我想统计阅读 <code>Google Tag Manager</code> 相关文章的 PV 总数，可以选择 <code>Page View</code> 类型的 <code>Track Type</code>, 然后添加一个触发规则，示图如下：</p>
+<p><img src="/images/gtm/gtm-trigger.png" alt="GTM Trigger"></p>
+<p>追踪类型、触发规则要容易区分我们想要统计的页面或者操作。这个以后再讲。</p>
+<h2 id="5-Preview-调试"><a href="#5-Preview-调试" class="headerlink" title="5. Preview 调试"></a>5. Preview 调试</h2><p>Tag, Trigger 配置好后，可以点击 “Preview” 开启 Debug 模式进行本地预览。</p>
+<p>预览：<br><img src="/images/gtm/gtm-preview.png" alt="GTM Preview"></p>
+<p>本地 Debug 触发的 Trigger &amp; Tag:<br><img src="/images/gtm/gtm-debug.png" alt="GTM Debug"></p>
+<p>上报的 Tag 信息：<br><img src="/images/gtm/gtm-debug2.png" alt="GTM Debug 2"></p>
+<p>GA 统计到的数据：<br><img src="/images/gtm/ga-event.png" alt="GA"></p>
+<p>调试 OK，推出 Debug，准备发布。</p>
+<h2 id="6-发布"><a href="#6-发布" class="headerlink" title="6. 发布"></a>6. 发布</h2><p>Google Tag Manager 提供了便捷的版本管理功能，填写好发布信息提交吧。</p>
+<p>以上，就是一次 GTM 基本应用配置了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Google Tag Manager 中 Tag 和 Trigger 提供的功能十分丰富，需要根据我们自身的统计需求选择配置。<br>开始或许很复杂，熟悉之后就很方便快捷了，试试看吧。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://blog.p2yang.com">宁千阳</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://blog.p2yang.com/2020/01/15/gtm-basic/">http://blog.p2yang.com/2020/01/15/gtm-basic/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Google-Tag-Manager/">Google Tag Manager</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2020/01/16/gtm-variables/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Google Tag Manager 实用自定义 Variable 和 Trigger</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/03/18/webhooks-deploy/">
+        <span class="next-text nav-default">Webhooks - 网站自动化部署实践</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2020
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">宁千阳</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
