@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="技术与生活纪事，涵盖react、vue、node、docker、elasticsearch、linux等，前后端兼顾，驰奔架构之路，探索新技术，欢迎交流分享。"/>
+  <meta name="description" content="使用 fetch 方法下载后端文件"/>
 
 
 
+
+  <meta name="keywords" content="web, 宁千阳博客" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://blog.p2yang.com/archives/2018/01/"/>
+<link rel="canonical" href="http://blog.p2yang.com/2020/02/12/fetch-download/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -96,11 +98,7 @@
 
 
 
-    <title>
-  
-    归档 - 宁千阳博客
-  
-</title>
+    <title> 使用 fetch 方法下载后端文件 - 宁千阳博客 </title>
   </head>
 
   <body>
@@ -218,175 +216,116 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 25 篇日志
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          使用 fetch 方法下载后端文件
+        
+      </h1>
 
-    
-      
+      <div class="post-meta">
+        <span class="post-time">
+          2020-02-12
+        </span>
         
         
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2018</h2>
+        <div class="post-visits"
+             data-url="/2020/02/12/fetch-download/"
+             data-title="使用 fetch 方法下载后端文件">
+            阅读次数
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-30
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/30/parcel-vue-pug/" class="archive-post-link">
-            parcel-vue环境下pug支持实践
-          </a>
-        </span>
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#过程分析"><span class="toc-text">过程分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-text">源码</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>在 web 页面中使用原生 window.fetch 下载后端文件。</p>
+<a id="more"></a>
+<h2 id="过程分析"><a href="#过程分析" class="headerlink" title="过程分析"></a>过程分析</h2><ol>
+<li>fetch url;</li>
+<li>解析 <code>blob</code> 数据;</li>
+<li>从 <code>response header</code> 中解析文件名;</li>
+<li>动态创建 <code>a</code> 标签，利用 <code>download</code> 进行下载;</li>
+<li>将 <code>blob</code> 数据转成 data uri, 赋值给 a href .</li>
+</ol>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://gist.github.com/p2yang/72f23f5bd808d424f0b18af34f3c95e1" target="_blank" rel="noopener">Gist Code</a><br><!-- download source code --></p>
+<script src="https://gist.github.com/p2yang/72f23f5bd808d424f0b18af34f3c95e1.js"></script>
+
+      
+    </div>
+
     
       
-        
-        
-
-        
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-26
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/26/parcel-step-2/" class="archive-post-link">
-            Parcel 开启三大CSS预处理器--Stylus/Less/Sass
-          </a>
-        </span>
-      </div>
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://blog.p2yang.com">宁千阳</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://blog.p2yang.com/2020/02/12/fetch-download/">http://blog.p2yang.com/2020/02/12/fetch-download/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
     
-      
-        
-        
 
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-24
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/24/parcel-vue/" class="archive-post-link">
-            Parcel + Vue 尝鲜
-          </a>
-        </span>
-      </div>
     
-      
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/web/">web</a>
+            
+          </div>
         
         
-
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-11
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/11/net-cross-by-frp/" class="archive-post-link">
-            frp 内网穿透实践
-          </a>
-        </span>
-      </div>
+  <nav class="post-nav">
     
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/10/opera-mini/" class="archive-post-link">
-            关于 Opera Mini 开发的那些事儿
-          </a>
-        </span>
-      </div>
     
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/04/node-querystring/" class="archive-post-link">
-            Node API - Querystring
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            01-03
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/03/node-path/" class="archive-post-link">
-            Node API - Path
-          </a>
-        </span>
-      </div>
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2020/01/19/webpack-dll/">
+        <span class="next-text nav-default">Webpack DllPlugin 基本应用与实践</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -465,6 +404,8 @@
     </div>
 
     
+  
+
 
 
     
