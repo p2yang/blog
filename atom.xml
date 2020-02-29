@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.p2yang.com/"/>
-  <updated>2020-02-12T07:17:34.000Z</updated>
+  <updated>2020-02-28T04:05:24.000Z</updated>
   <id>http://blog.p2yang.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【实用推荐】npm script 便捷执行工具 - ntl</title>
+    <link href="http://blog.p2yang.com/2020/02/28/package-ntl/"/>
+    <id>http://blog.p2yang.com/2020/02/28/package-ntl/</id>
+    <published>2020-02-28T04:05:24.000Z</published>
+    <updated>2020-02-28T04:05:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>当 <code>package.json</code> 文件里写了很多 <code>scripts</code> 命令，一时想不起来有哪些怎么办？这里推荐一个 npm package: <code>ntl</code>, 不用打开配置文件, 直接在命令行中列出所有可执行命令，上下选择确认即可执行，非常方便。</p><p><img src="https://ruyadorno.github.io/svg-demos/ntl/examples/option-rerun.svg" alt="ntl"></p><a id="more"></a><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i ntl -g</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>打开 <code>~/.bash_profile</code> 新增配置环境变量：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .bash_profile</span></span><br><span class="line"><span class="built_in">export</span> NTL_RUNNER=yarn</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在项目根目录下执行 <code>ntl</code> 命令即可。</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntl</span><br></pre></td></tr></table></figure><p>其他参数，可查看<a href="https://www.npmjs.com/package/ntl" target="_blank" rel="noopener">官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当 &lt;code&gt;package.json&lt;/code&gt; 文件里写了很多 &lt;code&gt;scripts&lt;/code&gt; 命令，一时想不起来有哪些怎么办？这里推荐一个 npm package: &lt;code&gt;ntl&lt;/code&gt;, 不用打开配置文件, 直接在命令行中列出所有可执行命令，上下选择确认即可执行，非常方便。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ruyadorno.github.io/svg-demos/ntl/examples/option-rerun.svg&quot; alt=&quot;ntl&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="http://blog.p2yang.com/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 fetch 方法下载后端文件</title>
@@ -420,26 +441,6 @@
     
     
       <category term="browser" scheme="http://blog.p2yang.com/tags/browser/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node API - Querystring</title>
-    <link href="http://blog.p2yang.com/2018/01/04/node-querystring/"/>
-    <id>http://blog.p2yang.com/2018/01/04/node-querystring/</id>
-    <published>2018-01-04T14:56:50.000Z</published>
-    <updated>2018-01-04T14:56:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>querystring</code> 是一个实用的 URL query 字符串处理工具，可以序列化一串键值对字符串，也可以将对象转化成一段 <code>a=b&amp;c=d</code> 形式的字符串。总之，非常好用，尤其是处理跟url query相关参数的时候。</p><a id="more"></a><p>说明：本文是基于 <a href="mailto:node@9.3.0" target="_blank" rel="noopener">node@9.3.0</a> 整理。查看<a href="https://nodejs.org/docs/v9.3.0/api/querystring.html" target="_blank" rel="noopener">官方文档</a></p><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>在 node 环境下，我们可以直接 require 或 import，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>)</span><br></pre></td></tr></table></figure></p><p>需要说明的是，npm上有一个 <a href="https://www.npmjs.com/package/qs" target="_blank" rel="noopener">qs</a> 包，跟querystring类似，但功能更强大，可以看看。</p><p>node querystring 公开的有四个方法，我们来看一看。</p><h2 id="parse-爱-stringify"><a href="#parse-爱-stringify" class="headerlink" title="parse 爱 stringify"></a>parse 爱 stringify</h2><p><code>parse</code>和<code>stringify</code>总是形影不离，在<code>JSON</code>中如此，这里也是一样。</p><h3 id="querystring-parse-str-sep-eq-options"><a href="#querystring-parse-str-sep-eq-options" class="headerlink" title="querystring.parse(str[, sep[, eq[, options]]])"></a>querystring.parse(str[, sep[, eq[, options]]])</h3><p>可选参数有点多，先来介绍一下:</p><ul><li>str: <code>String</code>, 目标字符串;</li><li>sep: <code>String</code>, str 中键值对间的分隔符，默认是<code>&amp;</code>;</li><li>eq: <code>String</code>, str 中key和value间的分隔符，默认是<code>=</code>;</li><li>options: <code>Object</code>, 包含三个属性：<ul><li>decodeURIComponent: <code>Function</code>, 解码方法，默认使用<code>querystring.unescape()</code></li><li>maxKeys: <code>Number</code>, 可以解析的最大key数目，默认是1000。设为0，则表示不限制数量。</li></ul></li></ul><p>示例如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">querystring.parse(<span class="string">'foo=bar&amp;abc=xyz&amp;abc=123'</span>)</span><br><span class="line"><span class="comment">/* Returns</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  foo: 'bar',</span></span><br><span class="line"><span class="comment">  abc: ['xyz', '123']</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p><p>注意：官方文档说，返回的对象不完全继承js的<code>Object</code>, 所以诸如<code>obj.toString</code>, <code>obj.hasOwnProperty</code>之类未定义的方法，无法使用哦～</p><h3 id="querystring-stringify-obj-sep-eq-options"><a href="#querystring-stringify-obj-sep-eq-options" class="headerlink" title="querystring.stringify(obj[, sep[, eq[, options]]])"></a>querystring.stringify(obj[, sep[, eq[, options]]])</h3><p><code>sep</code>,<code>eq</code>同上，默认分别是<code>&amp;</code>，<code>=</code>.</p><ul><li>obj: <code>Object</code>, 目标对象</li><li>options: <code>Object</code>, 包含一个方法<ul><li>encodeURIComponent: <code>Function</code>, 编码方法，默认使用<code>querystring.escape()</code></li></ul></li></ul><p><code>obj</code>的属性有所限制，只能转化 <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>String[]</code>, <code>Number[]</code>, <code>Boolean[]</code>类型的的值，其他类型的值会被转化为空字符串。</p><p>示例如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">querystring.stringify(&#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: [<span class="string">'qux'</span>, <span class="string">'quux'</span>], <span class="attr">corge</span>: <span class="string">''</span> &#125;);</span><br><span class="line"><span class="comment">// returns 'foo=bar&amp;baz=qux&amp;baz=quux&amp;corge='</span></span><br><span class="line"></span><br><span class="line">querystring.stringify(&#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: <span class="string">'qux'</span> &#125;, <span class="string">';'</span>, <span class="string">':'</span>);</span><br><span class="line"><span class="comment">// returns 'foo:bar;baz:qux'</span></span><br></pre></td></tr></table></figure></p><h2 id="离开，还是留下？"><a href="#离开，还是留下？" class="headerlink" title="离开，还是留下？"></a>离开，还是留下？</h2><p><code>escape</code> or <code>unescape</code>，选择只取决于你。一般不怎么用。<br>官方有云，</p><blockquote><p>The querystring.escape() method is used by querystring.stringify() and <strong>is generally not expected to be used directly</strong>. It is exported primarily to allow application code to provide a replacement percent-encoding implementation if necessary by assigning querystring.escape to an alternative function.</p></blockquote><p>所以，用不用随你心意。我们这里就简单说下吧（反正写的都很简洁。。。）。</p><h3 id="querystring-escape-str"><a href="#querystring-escape-str" class="headerlink" title="querystring.escape(str)"></a>querystring.escape(str)</h3><p>编码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">querystring.escape(<span class="string">'https://nodejs.org/dist/latest-v9.x/docs/api/querystring.html?nav=faq&amp;sa=sae'</span>)</span><br><span class="line"><span class="comment">// Returns 'https%3A%2F%2Fnodejs.org%2Fdist%2Flatest-v9.x%2Fdocs%2Fapi%2Fquerystring.html%3Fnav%3Dfaq%26sa%3Dsae'</span></span><br></pre></td></tr></table></figure></p><h3 id="querystring-unescape-str"><a href="#querystring-unescape-str" class="headerlink" title="querystring.unescape(str)"></a>querystring.unescape(str)</h3><p>解码，与escape相反。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">querystring.unescape(<span class="string">'https%3A%2F%2Fnodejs.org%2Fdist%2Flatest-v9.x%2Fdocs%2Fapi%2Fquerystring.html%3Fnav%3Dfaq%26sa%3Dsae'</span>)</span><br><span class="line"><span class="comment">// Returns 'https://nodejs.org/dist/latest-v9.x/docs/api/querystring.html?nav=faq&amp;sa=sae'</span></span><br></pre></td></tr></table></figure></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>说实话，之前从别人的文章中去看用法，总觉得捉急。md不写时间，不写版本，行文也不格式化，极易产生误解。后来总算明白了，别人嚼烂剩下，心里要有个谱儿。主动被动之间，不只有情趣！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;querystring&lt;/code&gt; 是一个实用的 URL query 字符串处理工具，可以序列化一串键值对字符串，也可以将对象转化成一段 &lt;code&gt;a=b&amp;amp;c=d&lt;/code&gt; 形式的字符串。总之，非常好用，尤其是处理跟url query相关参数的时候。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="node" scheme="http://blog.p2yang.com/tags/node/"/>
     
   </entry>
   
