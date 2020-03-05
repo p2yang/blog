@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="【实用推荐】npm script 便捷执行工具 - ntl"/>
+  <meta name="description" content="HTML 应用 a 标签拨打电话字符问题"/>
 
 
 
 
-  <meta name="keywords" content="npm, 宁千阳博客" />
+  <meta name="keywords" content="web, 宁千阳博客" />
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://blog.p2yang.com/2020/02/28/package-ntl/"/>
+<link rel="canonical" href="http://blog.p2yang.com/2020/03/05/web-tel/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -98,7 +98,7 @@
 
 
 
-    <title> 【实用推荐】npm script 便捷执行工具 - ntl - 宁千阳博客 </title>
+    <title> HTML 应用 a 标签拨打电话字符问题 - 宁千阳博客 </title>
   </head>
 
   <body>
@@ -220,19 +220,19 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          【实用推荐】npm script 便捷执行工具 - ntl
+          HTML 应用 a 标签拨打电话字符问题
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2020-02-28
+          2020-03-05
         </span>
         
         
         <div class="post-visits"
-             data-url="/2020/02/28/package-ntl/"
-             data-title="【实用推荐】npm script 便捷执行工具 - ntl">
+             data-url="/2020/03/05/web-tel/"
+             data-title="HTML 应用 a 标签拨打电话字符问题">
             阅读次数
           </div>
         
@@ -241,25 +241,15 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
-    </div>
-  </div>
-
 
     <div class="post-content">
       
-        <p>当 <code>package.json</code> 文件里写了很多 <code>scripts</code> 命令，一时想不起来有哪些怎么办？这里推荐一个 npm package: <code>ntl</code>, 不用打开配置文件, 直接在命令行中列出所有可执行命令，上下选择确认即可执行，非常方便。</p>
-<p><img src="https://ruyadorno.github.io/svg-demos/ntl/examples/option-rerun.svg" alt="ntl"></p>
+        <p>在 HTML 中我们使用 <code>a</code> 标签来拨打电话。有一些特殊字符可能无法带入系统拨号键盘，如 <code>#</code>。</p>
 <a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i ntl -g</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>打开 <code>~/.bash_profile</code> 新增配置环境变量：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .bash_profile</span></span><br><span class="line"><span class="built_in">export</span> NTL_RUNNER=yarn</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在项目根目录下执行 <code>ntl</code> 命令即可。</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntl</span><br></pre></td></tr></table></figure>
-<p>其他参数，可查看<a href="https://www.npmjs.com/package/ntl" target="_blank" rel="noopener">官方文档</a></p>
+<p>解决方法：对号码进行编码，如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"tel:123*312%23"</span>&gt;</span> TEL: 123*312# <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>手机号中带有 <code>#</code>，编码后变成了 <code>%23</code>。<br>在 js 中，可以使用 <code>encodeURIComponent</code> 方法对其进行编码。</p>
+<p>以上。</p>
 
       
     </div>
@@ -275,7 +265,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="http://blog.p2yang.com/2020/02/28/package-ntl/">http://blog.p2yang.com/2020/02/28/package-ntl/</a>
+      <a href="http://blog.p2yang.com/2020/03/05/web-tel/">http://blog.p2yang.com/2020/03/05/web-tel/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span>
@@ -295,7 +285,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/npm/">npm</a>
+              <a href="/tags/web/">web</a>
             
           </div>
         
@@ -303,15 +293,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2020/03/05/web-tel/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">HTML 应用 a 标签拨打电话字符问题</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2020/02/12/fetch-download/">
-        <span class="next-text nav-default">使用 fetch 方法下载后端文件</span>
+      <a class="next" href="/2020/02/28/package-ntl/">
+        <span class="next-text nav-default">【实用推荐】npm script 便捷执行工具 - ntl</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

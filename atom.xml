@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.p2yang.com/"/>
-  <updated>2020-02-28T04:05:24.000Z</updated>
+  <updated>2020-03-05T13:20:33.000Z</updated>
   <id>http://blog.p2yang.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML 应用 a 标签拨打电话字符问题</title>
+    <link href="http://blog.p2yang.com/2020/03/05/web-tel/"/>
+    <id>http://blog.p2yang.com/2020/03/05/web-tel/</id>
+    <published>2020-03-05T13:20:33.000Z</published>
+    <updated>2020-03-05T13:20:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 HTML 中我们使用 <code>a</code> 标签来拨打电话。有一些特殊字符可能无法带入系统拨号键盘，如 <code>#</code>。</p><a id="more"></a><p>解决方法：对号码进行编码，如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"tel:123*312%23"</span>&gt;</span> TEL: 123*312# <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><p>手机号中带有 <code>#</code>，编码后变成了 <code>%23</code>。<br>在 js 中，可以使用 <code>encodeURIComponent</code> 方法对其进行编码。</p><p>以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 HTML 中我们使用 &lt;code&gt;a&lt;/code&gt; 标签来拨打电话。有一些特殊字符可能无法带入系统拨号键盘，如 &lt;code&gt;#&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://blog.p2yang.com/tags/web/"/>
+    
+  </entry>
   
   <entry>
     <title>【实用推荐】npm script 便捷执行工具 - ntl</title>
@@ -421,26 +441,6 @@
     
     
       <category term="http" scheme="http://blog.p2yang.com/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于 Opera Mini 开发的那些事儿</title>
-    <link href="http://blog.p2yang.com/2018/01/10/opera-mini/"/>
-    <id>http://blog.p2yang.com/2018/01/10/opera-mini/</id>
-    <published>2018-01-10T07:12:22.000Z</published>
-    <updated>2018-01-10T07:12:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>前期暂时先记录这些，稍后再补充。</p><a id="more"></a><h2 id="不支持的一些-CSS-Style"><a href="#不支持的一些-CSS-Style" class="headerlink" title="不支持的一些 CSS Style"></a>不支持的一些 CSS Style</h2><ul><li>line-height</li><li>border-radius</li><li>CSS gradients (老老实实用 background-color 吧)</li><li>CSS animations</li><li>font-family</li><li>icon fonts (用svg替代)</li><li>只有body元素支持滚动, 其他元素即使加overflow也不行。即使是iframe，也会被切掉不足显示的部分。</li><li>fixed定位</li></ul><h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><ul><li>动态图只会渲染第一帧，不会动。</li><li>图片会被压缩，建议不要用图片显示文本。如果非要用的话，可在CSS中引入图片，并且对图片做优化适配。</li><li>不支持任何动画，包括动态gif, 动态svg, blink/marquee元素等。因为服务器渲染并发送给客户端的只是一张快照。</li><li>flex 布局会影响元素的width, 导致ellipsis失败，注意使用；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://dev.opera.com/articles/opera-mini-content-authoring-guidelines/#basic-html-css" target="_blank" rel="noopener">Opera Mini: Web Content Authoring Guidelines</a><br><a href="https://dev.opera.com/articles/making-sites-work-opera-mini/" target="_blank" rel="noopener">Making websites that work well on Opera Mini</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前期暂时先记录这些，稍后再补充。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="browser" scheme="http://blog.p2yang.com/tags/browser/"/>
     
   </entry>
   
