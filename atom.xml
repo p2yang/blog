@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>宁千阳博客</title>
+  <title>P2yang&#39;s Blog</title>
   
-  <subtitle>「宁千阳」博客小站</subtitle>
+  <subtitle>p2yang&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.p2yang.com/"/>
@@ -10,7 +10,7 @@
   <id>http://blog.p2yang.com/</id>
   
   <author>
-    <name>宁千阳</name>
+    <name>p2yang</name>
     
   </author>
   
