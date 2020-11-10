@@ -3,11 +3,11 @@
   <title>P2yang&#39;s Blog</title>
   
   <subtitle>p2yang&#39;s blog</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://blog.p2yang.com/"/>
+  <link href="http://p2yang.github.io/"/>
   <updated>2020-06-12T09:55:26.000Z</updated>
-  <id>http://blog.p2yang.com/</id>
+  <id>http://p2yang.github.io/</id>
   
   <author>
     <name>p2yang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Mac 精品屏保推荐</title>
-    <link href="http://blog.p2yang.com/2020/06/12/pictures/"/>
-    <id>http://blog.p2yang.com/2020/06/12/pictures/</id>
+    <link href="http://p2yang.github.io/2020/06/12/pictures/"/>
+    <id>http://p2yang.github.io/2020/06/12/pictures/</id>
     <published>2020-06-12T09:55:26.000Z</published>
     <updated>2020-06-12T09:55:26.000Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="mac" scheme="http://blog.p2yang.com/categories/mac/"/>
+      <category term="mac" scheme="http://p2yang.github.io/categories/mac/"/>
     
     
-      <category term="tool" scheme="http://blog.p2yang.com/tags/tool/"/>
+      <category term="tool" scheme="http://p2yang.github.io/tags/tool/"/>
     
   </entry>
   
   <entry>
     <title>HTML 应用 a 标签拨打电话字符问题</title>
-    <link href="http://blog.p2yang.com/2020/03/05/web-tel/"/>
-    <id>http://blog.p2yang.com/2020/03/05/web-tel/</id>
+    <link href="http://p2yang.github.io/2020/03/05/web-tel/"/>
+    <id>http://p2yang.github.io/2020/03/05/web-tel/</id>
     <published>2020-03-05T13:20:33.000Z</published>
     <updated>2020-03-05T13:20:33.000Z</updated>
     
@@ -54,14 +54,14 @@
     </summary>
     
     
-      <category term="web" scheme="http://blog.p2yang.com/tags/web/"/>
+      <category term="web" scheme="http://p2yang.github.io/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>【实用推荐】npm script 便捷执行工具 - ntl</title>
-    <link href="http://blog.p2yang.com/2020/02/28/package-ntl/"/>
-    <id>http://blog.p2yang.com/2020/02/28/package-ntl/</id>
+    <link href="http://p2yang.github.io/2020/02/28/package-ntl/"/>
+    <id>http://p2yang.github.io/2020/02/28/package-ntl/</id>
     <published>2020-02-28T04:05:24.000Z</published>
     <updated>2020-02-28T04:05:24.000Z</updated>
     
@@ -75,14 +75,14 @@
     </summary>
     
     
-      <category term="npm" scheme="http://blog.p2yang.com/tags/npm/"/>
+      <category term="npm" scheme="http://p2yang.github.io/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>使用 fetch 方法下载后端文件</title>
-    <link href="http://blog.p2yang.com/2020/02/12/fetch-download/"/>
-    <id>http://blog.p2yang.com/2020/02/12/fetch-download/</id>
+    <link href="http://p2yang.github.io/2020/02/12/fetch-download/"/>
+    <id>http://p2yang.github.io/2020/02/12/fetch-download/</id>
     <published>2020-02-12T07:17:34.000Z</published>
     <updated>2020-02-12T07:17:34.000Z</updated>
     
@@ -95,18 +95,18 @@
     </summary>
     
     
-      <category term="web" scheme="http://blog.p2yang.com/tags/web/"/>
+      <category term="web" scheme="http://p2yang.github.io/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>Webpack DllPlugin 基本应用与实践</title>
-    <link href="http://blog.p2yang.com/2020/01/19/webpack-dll/"/>
-    <id>http://blog.p2yang.com/2020/01/19/webpack-dll/</id>
+    <link href="http://p2yang.github.io/2020/01/19/webpack-dll/"/>
+    <id>http://p2yang.github.io/2020/01/19/webpack-dll/</id>
     <published>2020-01-19T14:37:31.000Z</published>
     <updated>2020-01-19T14:37:31.000Z</updated>
     
-    <content type="html"><![CDATA[<p><code>Webpack</code> 内置插件 <code>DllPlugin</code> 可以将一些较长时间内、稳定不变的包或组件拆分出来，以 <code>script</code> 外链的形式引入页面，以减少 <code>webpack</code> 打包时间，长期缓存。本文记录了 Webpack 内置插件 <code>DllPlugin</code> 基本应用方法。</p><a id="more"></a><p>本文环境以 <a href="mailto:`webpack@4.x" target="_blank" rel="noopener">`webpack@4.x</a><code>+</code><a href="mailto:node@10.x" target="_blank" rel="noopener">node@10.x</a>` 为主，应用分 3 步：</p><ol><li>单独打包 <code>dll</code> 相关文件；</li><li>引入 <code>webpack</code> 配置；</li><li>插入外链；</li></ol><h2 id="单独打包-dll-相关文件；"><a href="#单独打包-dll-相关文件；" class="headerlink" title="单独打包 dll 相关文件；"></a>单独打包 <code>dll</code> 相关文件；</h2><p>新建 <code>webpack</code> 配置文件 <code>webpack.dll.js</code>，添加 <code>dll</code> 相关文件打包配置，代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.dll.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'production'</span> : <span class="string">'development'</span>,</span><br><span class="line">  entry: &#123;</span><br><span class="line">    vendor: [</span><br><span class="line">      <span class="string">'vue'</span>,</span><br><span class="line">      <span class="string">'vue-router'</span>,</span><br><span class="line">      <span class="string">'vuex'</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'static/lib'</span>),</span><br><span class="line">    filename: <span class="string">'[name].dll.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllPlugin(&#123;</span><br><span class="line">      name: <span class="string">'[name]_[hash]'</span>,</span><br><span class="line">      path: path.join(__dirname, <span class="string">'.'</span>, <span class="string">'[name]_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后在 <code>package.json</code> scripts 中添加命令:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"build:dll"</span>: <span class="string">"webpack --config dll/webpack.dll.js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>配置好后，执行命令：</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm run build:dll</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn build:dll</span><br></pre></td></tr></table></figure><p>这里会将我们选取 vue 三件套打包出来(Github示例地址请看下文)，生成以下两个文件：</p><ul><li><code>vendor_manifest.json</code>: dll 配置文件，需要在 <code>webpack</code> 主配置文件中引入；</li><li><code>vendor.dll.js</code>: 目标依赖整合文件，最后需要外链。</li></ul><p>下面，来看下这两个文件的使用吧。</p><h2 id="使用-webpack-DllReferencePlugin-引入-webpack-主配置；"><a href="#使用-webpack-DllReferencePlugin-引入-webpack-主配置；" class="headerlink" title="使用 webpack.DllReferencePlugin 引入 webpack 主配置；"></a>使用 <code>webpack.DllReferencePlugin</code> 引入 <code>webpack</code> 主配置；</h2><p>在 <code>webpack</code> 主配置文件中引入 <code>vendor_manifest.json</code>：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"><span class="comment">// ...此处省略其他配置</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllReferencePlugin(&#123;</span><br><span class="line">      context: __dirname,</span><br><span class="line">      manifest: <span class="built_in">require</span>(<span class="string">'./vendor_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="插入外链；"><a href="#插入外链；" class="headerlink" title="插入外链；"></a>插入外链；</h2><p>直接在 html 入口文件中引入。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/static/lib/vendor.dll.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>启动本地服务看看吧。</p><p>注：可使用 <a href="https://www.npmjs.com/package/anywhere" target="_blank" rel="noopener"><code>anywhere</code></a> 或者 <a href="https://www.npmjs.com/package/http-server" target="_blank" rel="noopener"><code>http-server</code></a> 快速启动本地静态服务器。</p><h2 id="Github-示例"><a href="#Github-示例" class="headerlink" title="Github 示例"></a>Github 示例</h2><p><a href="https://github.com/p2yang/webpack-examples/tree/master/dll" target="_blank" rel="noopener">Github 示例</a><br><a href="http://blog.p2yang.com">个人博客</a></p>]]></content>
+    <content type="html"><![CDATA[<p><code>Webpack</code> 内置插件 <code>DllPlugin</code> 可以将一些较长时间内、稳定不变的包或组件拆分出来，以 <code>script</code> 外链的形式引入页面，以减少 <code>webpack</code> 打包时间，长期缓存。本文记录了 Webpack 内置插件 <code>DllPlugin</code> 基本应用方法。</p><a id="more"></a><p>本文环境以 <a href="mailto:`webpack@4.x" target="_blank" rel="noopener">`webpack@4.x</a><code>+</code><a href="mailto:node@10.x" target="_blank" rel="noopener">node@10.x</a>` 为主，应用分 3 步：</p><ol><li>单独打包 <code>dll</code> 相关文件；</li><li>引入 <code>webpack</code> 配置；</li><li>插入外链；</li></ol><h2 id="单独打包-dll-相关文件；"><a href="#单独打包-dll-相关文件；" class="headerlink" title="单独打包 dll 相关文件；"></a>单独打包 <code>dll</code> 相关文件；</h2><p>新建 <code>webpack</code> 配置文件 <code>webpack.dll.js</code>，添加 <code>dll</code> 相关文件打包配置，代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.dll.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'production'</span> : <span class="string">'development'</span>,</span><br><span class="line">  entry: &#123;</span><br><span class="line">    vendor: [</span><br><span class="line">      <span class="string">'vue'</span>,</span><br><span class="line">      <span class="string">'vue-router'</span>,</span><br><span class="line">      <span class="string">'vuex'</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'static/lib'</span>),</span><br><span class="line">    filename: <span class="string">'[name].dll.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllPlugin(&#123;</span><br><span class="line">      name: <span class="string">'[name]_[hash]'</span>,</span><br><span class="line">      path: path.join(__dirname, <span class="string">'.'</span>, <span class="string">'[name]_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后在 <code>package.json</code> scripts 中添加命令:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"build:dll"</span>: <span class="string">"webpack --config dll/webpack.dll.js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>配置好后，执行命令：</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm run build:dll</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn build:dll</span><br></pre></td></tr></table></figure><p>这里会将我们选取 vue 三件套打包出来(Github示例地址请看下文)，生成以下两个文件：</p><ul><li><code>vendor_manifest.json</code>: dll 配置文件，需要在 <code>webpack</code> 主配置文件中引入；</li><li><code>vendor.dll.js</code>: 目标依赖整合文件，最后需要外链。</li></ul><p>下面，来看下这两个文件的使用吧。</p><h2 id="使用-webpack-DllReferencePlugin-引入-webpack-主配置；"><a href="#使用-webpack-DllReferencePlugin-引入-webpack-主配置；" class="headerlink" title="使用 webpack.DllReferencePlugin 引入 webpack 主配置；"></a>使用 <code>webpack.DllReferencePlugin</code> 引入 <code>webpack</code> 主配置；</h2><p>在 <code>webpack</code> 主配置文件中引入 <code>vendor_manifest.json</code>：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"><span class="comment">// ...此处省略其他配置</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllReferencePlugin(&#123;</span><br><span class="line">      context: __dirname,</span><br><span class="line">      manifest: <span class="built_in">require</span>(<span class="string">'./vendor_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="插入外链；"><a href="#插入外链；" class="headerlink" title="插入外链；"></a>插入外链；</h2><p>直接在 html 入口文件中引入。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/static/lib/vendor.dll.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>启动本地服务看看吧。</p><p>注：可使用 <a href="https://www.npmjs.com/package/anywhere" target="_blank" rel="noopener"><code>anywhere</code></a> 或者 <a href="https://www.npmjs.com/package/http-server" target="_blank" rel="noopener"><code>http-server</code></a> 快速启动本地静态服务器。</p><h2 id="Github-示例"><a href="#Github-示例" class="headerlink" title="Github 示例"></a>Github 示例</h2><p><a href="https://github.com/p2yang/webpack-examples/tree/master/dll" target="_blank" rel="noopener">Github 示例</a><br><a href="http://blog.p2yang.com" target="_blank" rel="noopener">个人博客</a></p>]]></content>
     
     <summary type="html">
     
@@ -115,14 +115,14 @@
     </summary>
     
     
-      <category term="webpack" scheme="http://blog.p2yang.com/tags/webpack/"/>
+      <category term="webpack" scheme="http://p2yang.github.io/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>Google Tag Manager 实用自定义 Variable 和 Trigger</title>
-    <link href="http://blog.p2yang.com/2020/01/16/gtm-variables/"/>
-    <id>http://blog.p2yang.com/2020/01/16/gtm-variables/</id>
+    <link href="http://p2yang.github.io/2020/01/16/gtm-variables/"/>
+    <id>http://p2yang.github.io/2020/01/16/gtm-variables/</id>
     <published>2020-01-16T14:19:47.000Z</published>
     <updated>2020-01-16T14:19:47.000Z</updated>
     
@@ -135,14 +135,14 @@
     </summary>
     
     
-      <category term="Google Tag Manager" scheme="http://blog.p2yang.com/tags/Google-Tag-Manager/"/>
+      <category term="Google Tag Manager" scheme="http://p2yang.github.io/tags/Google-Tag-Manager/"/>
     
   </entry>
   
   <entry>
     <title>Google Tag Manager 基本应用与实践</title>
-    <link href="http://blog.p2yang.com/2020/01/15/gtm-basic/"/>
-    <id>http://blog.p2yang.com/2020/01/15/gtm-basic/</id>
+    <link href="http://p2yang.github.io/2020/01/15/gtm-basic/"/>
+    <id>http://p2yang.github.io/2020/01/15/gtm-basic/</id>
     <published>2020-01-15T08:05:36.000Z</published>
     <updated>2020-01-15T08:05:36.000Z</updated>
     
@@ -156,14 +156,14 @@
     </summary>
     
     
-      <category term="Google Tag Manager" scheme="http://blog.p2yang.com/tags/Google-Tag-Manager/"/>
+      <category term="Google Tag Manager" scheme="http://p2yang.github.io/tags/Google-Tag-Manager/"/>
     
   </entry>
   
   <entry>
     <title>Webhooks - 网站自动化部署实践</title>
-    <link href="http://blog.p2yang.com/2019/03/18/webhooks-deploy/"/>
-    <id>http://blog.p2yang.com/2019/03/18/webhooks-deploy/</id>
+    <link href="http://p2yang.github.io/2019/03/18/webhooks-deploy/"/>
+    <id>http://p2yang.github.io/2019/03/18/webhooks-deploy/</id>
     <published>2019-03-18T07:10:03.000Z</published>
     <updated>2019-03-20T03:17:03.000Z</updated>
     
@@ -175,19 +175,19 @@
     
     </summary>
     
-      <category term="web" scheme="http://blog.p2yang.com/categories/web/"/>
+      <category term="web" scheme="http://p2yang.github.io/categories/web/"/>
     
     
-      <category term="git" scheme="http://blog.p2yang.com/tags/git/"/>
+      <category term="git" scheme="http://p2yang.github.io/tags/git/"/>
     
-      <category term="node" scheme="http://blog.p2yang.com/tags/node/"/>
+      <category term="node" scheme="http://p2yang.github.io/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>Node 图片绘制及合成介绍</title>
-    <link href="http://blog.p2yang.com/2019/01/17/node-draw-image/"/>
-    <id>http://blog.p2yang.com/2019/01/17/node-draw-image/</id>
+    <link href="http://p2yang.github.io/2019/01/17/node-draw-image/"/>
+    <id>http://p2yang.github.io/2019/01/17/node-draw-image/</id>
     <published>2019-01-17T02:14:09.000Z</published>
     <updated>2019-01-17T02:14:09.000Z</updated>
     
@@ -200,14 +200,14 @@
     </summary>
     
     
-      <category term="node" scheme="http://blog.p2yang.com/tags/node/"/>
+      <category term="node" scheme="http://p2yang.github.io/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>iOS Simulator 模拟器 - web 页面调试实践</title>
-    <link href="http://blog.p2yang.com/2018/11/06/simulator-dev/"/>
-    <id>http://blog.p2yang.com/2018/11/06/simulator-dev/</id>
+    <link href="http://p2yang.github.io/2018/11/06/simulator-dev/"/>
+    <id>http://p2yang.github.io/2018/11/06/simulator-dev/</id>
     <published>2018-11-06T08:06:40.000Z</published>
     <updated>2018-11-06T08:06:40.000Z</updated>
     
@@ -219,21 +219,21 @@
     
     </summary>
     
-      <category term="Tool" scheme="http://blog.p2yang.com/categories/Tool/"/>
+      <category term="Tool" scheme="http://p2yang.github.io/categories/Tool/"/>
     
-      <category term="ios" scheme="http://blog.p2yang.com/categories/Tool/ios/"/>
+      <category term="ios" scheme="http://p2yang.github.io/categories/Tool/ios/"/>
     
     
-      <category term="Tool" scheme="http://blog.p2yang.com/tags/Tool/"/>
+      <category term="Tool" scheme="http://p2yang.github.io/tags/Tool/"/>
     
-      <category term="ios" scheme="http://blog.p2yang.com/tags/ios/"/>
+      <category term="ios" scheme="http://p2yang.github.io/tags/ios/"/>
     
   </entry>
   
   <entry>
     <title>Canvas 跨域脱坑实践</title>
-    <link href="http://blog.p2yang.com/2018/11/02/canvas-to-img/"/>
-    <id>http://blog.p2yang.com/2018/11/02/canvas-to-img/</id>
+    <link href="http://p2yang.github.io/2018/11/02/canvas-to-img/"/>
+    <id>http://p2yang.github.io/2018/11/02/canvas-to-img/</id>
     <published>2018-11-02T06:35:29.000Z</published>
     <updated>2018-11-02T06:35:29.000Z</updated>
     
@@ -246,17 +246,17 @@
     
     </summary>
     
-      <category term="web" scheme="http://blog.p2yang.com/categories/web/"/>
+      <category term="web" scheme="http://p2yang.github.io/categories/web/"/>
     
     
-      <category term="Canvas" scheme="http://blog.p2yang.com/tags/Canvas/"/>
+      <category term="Canvas" scheme="http://p2yang.github.io/tags/Canvas/"/>
     
   </entry>
   
   <entry>
     <title>Google Robots</title>
-    <link href="http://blog.p2yang.com/2018/09/12/google-robots/"/>
-    <id>http://blog.p2yang.com/2018/09/12/google-robots/</id>
+    <link href="http://p2yang.github.io/2018/09/12/google-robots/"/>
+    <id>http://p2yang.github.io/2018/09/12/google-robots/</id>
     <published>2018-09-12T11:33:04.000Z</published>
     <updated>2018-09-13T08:05:04.000Z</updated>
     
@@ -272,14 +272,14 @@
     </summary>
     
     
-      <category term="Tools" scheme="http://blog.p2yang.com/tags/Tools/"/>
+      <category term="Tools" scheme="http://p2yang.github.io/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>webpack profile 文件分析功能</title>
-    <link href="http://blog.p2yang.com/2018/07/25/webpack-profile-stats/"/>
-    <id>http://blog.p2yang.com/2018/07/25/webpack-profile-stats/</id>
+    <link href="http://p2yang.github.io/2018/07/25/webpack-profile-stats/"/>
+    <id>http://p2yang.github.io/2018/07/25/webpack-profile-stats/</id>
     <published>2018-07-25T02:27:47.000Z</published>
     <updated>2018-07-25T02:27:47.000Z</updated>
     
@@ -292,8 +292,8 @@
   
   <entry>
     <title>Sublime Text 实用插件</title>
-    <link href="http://blog.p2yang.com/2018/05/21/sublime-text-plugins/"/>
-    <id>http://blog.p2yang.com/2018/05/21/sublime-text-plugins/</id>
+    <link href="http://p2yang.github.io/2018/05/21/sublime-text-plugins/"/>
+    <id>http://p2yang.github.io/2018/05/21/sublime-text-plugins/</id>
     <published>2018-05-21T11:04:05.000Z</published>
     <updated>2018-05-21T11:04:05.000Z</updated>
     
@@ -305,17 +305,17 @@
     
     </summary>
     
-      <category term="Editor" scheme="http://blog.p2yang.com/categories/Editor/"/>
+      <category term="Editor" scheme="http://p2yang.github.io/categories/Editor/"/>
     
     
-      <category term="Sublime Text" scheme="http://blog.p2yang.com/tags/Sublime-Text/"/>
+      <category term="Sublime Text" scheme="http://p2yang.github.io/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
     <title>Node API - URL</title>
-    <link href="http://blog.p2yang.com/2018/05/15/node-url/"/>
-    <id>http://blog.p2yang.com/2018/05/15/node-url/</id>
+    <link href="http://p2yang.github.io/2018/05/15/node-url/"/>
+    <id>http://p2yang.github.io/2018/05/15/node-url/</id>
     <published>2018-05-15T01:33:10.000Z</published>
     <updated>2018-05-15T01:33:10.000Z</updated>
     
@@ -328,14 +328,14 @@
     </summary>
     
     
-      <category term="node" scheme="http://blog.p2yang.com/tags/node/"/>
+      <category term="node" scheme="http://p2yang.github.io/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>白用了那么多年的 ‘oh-my-zsh’ -- Plugins</title>
-    <link href="http://blog.p2yang.com/2018/03/22/zsh/"/>
-    <id>http://blog.p2yang.com/2018/03/22/zsh/</id>
+    <link href="http://p2yang.github.io/2018/03/22/zsh/"/>
+    <id>http://p2yang.github.io/2018/03/22/zsh/</id>
     <published>2018-03-22T11:02:56.000Z</published>
     <updated>2018-03-22T11:02:56.000Z</updated>
     
@@ -347,19 +347,19 @@
     
     </summary>
     
-      <category term="Tool" scheme="http://blog.p2yang.com/categories/Tool/"/>
+      <category term="Tool" scheme="http://p2yang.github.io/categories/Tool/"/>
     
     
-      <category term="Tool" scheme="http://blog.p2yang.com/tags/Tool/"/>
+      <category term="Tool" scheme="http://p2yang.github.io/tags/Tool/"/>
     
-      <category term="Terminal" scheme="http://blog.p2yang.com/tags/Terminal/"/>
+      <category term="Terminal" scheme="http://p2yang.github.io/tags/Terminal/"/>
     
   </entry>
   
   <entry>
     <title>Gogs + Docker 搭建 Git 服务器实践</title>
-    <link href="http://blog.p2yang.com/2018/03/07/docker-gogs/"/>
-    <id>http://blog.p2yang.com/2018/03/07/docker-gogs/</id>
+    <link href="http://p2yang.github.io/2018/03/07/docker-gogs/"/>
+    <id>http://p2yang.github.io/2018/03/07/docker-gogs/</id>
     <published>2018-03-07T04:59:00.000Z</published>
     <updated>2018-03-07T04:59:00.000Z</updated>
     
@@ -372,16 +372,16 @@
     </summary>
     
     
-      <category term="git" scheme="http://blog.p2yang.com/tags/git/"/>
+      <category term="git" scheme="http://p2yang.github.io/tags/git/"/>
     
-      <category term="docker" scheme="http://blog.p2yang.com/tags/docker/"/>
+      <category term="docker" scheme="http://p2yang.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>parcel-vue环境下pug支持实践</title>
-    <link href="http://blog.p2yang.com/2018/01/30/parcel-vue-pug/"/>
-    <id>http://blog.p2yang.com/2018/01/30/parcel-vue-pug/</id>
+    <link href="http://p2yang.github.io/2018/01/30/parcel-vue-pug/"/>
+    <id>http://p2yang.github.io/2018/01/30/parcel-vue-pug/</id>
     <published>2018-01-30T01:18:42.000Z</published>
     <updated>2018-01-30T01:18:42.000Z</updated>
     
@@ -394,16 +394,16 @@
     </summary>
     
     
-      <category term="parcel" scheme="http://blog.p2yang.com/tags/parcel/"/>
+      <category term="parcel" scheme="http://p2yang.github.io/tags/parcel/"/>
     
-      <category term="vue" scheme="http://blog.p2yang.com/tags/vue/"/>
+      <category term="vue" scheme="http://p2yang.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>Parcel 开启三大CSS预处理器--Stylus/Less/Sass</title>
-    <link href="http://blog.p2yang.com/2018/01/26/parcel-step-2/"/>
-    <id>http://blog.p2yang.com/2018/01/26/parcel-step-2/</id>
+    <link href="http://p2yang.github.io/2018/01/26/parcel-step-2/"/>
+    <id>http://p2yang.github.io/2018/01/26/parcel-step-2/</id>
     <published>2018-01-26T11:59:28.000Z</published>
     <updated>2018-01-26T11:59:28.000Z</updated>
     
@@ -416,18 +416,18 @@
     </summary>
     
     
-      <category term="parcel" scheme="http://blog.p2yang.com/tags/parcel/"/>
+      <category term="parcel" scheme="http://p2yang.github.io/tags/parcel/"/>
     
-      <category term="vue" scheme="http://blog.p2yang.com/tags/vue/"/>
+      <category term="vue" scheme="http://p2yang.github.io/tags/vue/"/>
     
-      <category term="css" scheme="http://blog.p2yang.com/tags/css/"/>
+      <category term="css" scheme="http://p2yang.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>Parcel + Vue 尝鲜</title>
-    <link href="http://blog.p2yang.com/2018/01/24/parcel-vue/"/>
-    <id>http://blog.p2yang.com/2018/01/24/parcel-vue/</id>
+    <link href="http://p2yang.github.io/2018/01/24/parcel-vue/"/>
+    <id>http://p2yang.github.io/2018/01/24/parcel-vue/</id>
     <published>2018-01-24T11:46:26.000Z</published>
     <updated>2018-01-24T11:46:26.000Z</updated>
     
@@ -440,9 +440,9 @@
     </summary>
     
     
-      <category term="parcel" scheme="http://blog.p2yang.com/tags/parcel/"/>
+      <category term="parcel" scheme="http://p2yang.github.io/tags/parcel/"/>
     
-      <category term="vue" scheme="http://blog.p2yang.com/tags/vue/"/>
+      <category term="vue" scheme="http://p2yang.github.io/tags/vue/"/>
     
   </entry>
   
