@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Node API - Path"/>
+
+
+
+
+  <meta name="keywords" content="node, 李二夜's Blog" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="李二夜's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://p2yang.github.io/blog/2018/01/03/node-path/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Node API - Path - 李二夜's Blog </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">李二夜's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/blog/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/blog/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/blog/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">李二夜's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Node API - Path
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-03
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/blog/blog/2018/01/03/node-path/"
+             data-title="Node API - Path">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用"><span class="toc-text">实用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-join-…paths"><span class="toc-text">path.join([…paths])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-normalize-path"><span class="toc-text">path.normalize(path)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相对，还是绝对？"><span class="toc-text">相对，还是绝对？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-relative"><span class="toc-text">path.relative</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-resolve"><span class="toc-text">path.resolve</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式化"><span class="toc-text">格式化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-format-options"><span class="toc-text">path.format(options)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-parse-path"><span class="toc-text">path.parse(path)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他-api"><span class="toc-text">其他 api</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-basename-path-ext"><span class="toc-text">path.basename(path[, ext])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-delimiter"><span class="toc-text">path.delimiter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-dirname-path"><span class="toc-text">path.dirname(path)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-extname-path"><span class="toc-text">path.extname(path)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-isAbsolute-path"><span class="toc-text">path.isAbsolute(path)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-sep"><span class="toc-text">path.sep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-posix"><span class="toc-text">path.posix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-win32"><span class="toc-text">path.win32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-toNamespacedPath-path"><span class="toc-text">path.toNamespacedPath(path)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>准备好好过一下 node api, 先来看看 path 吧。</p>
+<a id="more"></a>
+<p>说明：本文是基于 <a href="mailto:node@9.3.0" target="_blank" rel="noopener">node@9.3.0</a> 整理。查看<a href="https://nodejs.org/docs/v9.3.0/api/path.html" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>人如其名，path 也一样，表示“路径”，是node中的一大模块，为文件和文件夹路径提供实用的信息。</p>
+<p>引入很简单。在node环境下，直接require即可，如下所示。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br></pre></td></tr></table></figure>
+<p>声明：下面的示例基本都是在POSIX系统下的结果。<br><b style="color: #f00">注意：在windows和POSIX系统上，路径分隔符有区别。</b></p>
+<h2 id="实用"><a href="#实用" class="headerlink" title="实用"></a>实用</h2><h3 id="path-join-…paths"><a href="#path-join-…paths" class="headerlink" title="path.join([…paths])"></a>path.join([…paths])</h3><p>自动添加系统分隔符，返回对应路径。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.join(<span class="string">'/foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz/asdf'</span>, <span class="string">'quux'</span>, <span class="string">'..'</span>);</span><br><span class="line"><span class="comment">// Returns: '/foo/bar/baz/asdf'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize(path)"></a>path.normalize(path)</h3><p>序列化目标路径，解析 <code>..</code> 和 <code>.</code> 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.normalize(&apos;/foo/bar//baz/asdf/quux/..&apos;);</span><br><span class="line">// Returns: &apos;/foo/bar/baz/asdf&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="相对，还是绝对？"><a href="#相对，还是绝对？" class="headerlink" title="相对，还是绝对？"></a>相对，还是绝对？</h2><h3 id="path-relative"><a href="#path-relative" class="headerlink" title="path.relative"></a>path.relative</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.relative(<span class="string">'/data/orandea/test/aaa'</span>, <span class="string">'/data/orandea/impl/bbb'</span>);</span><br><span class="line"><span class="comment">// Returns: '../../impl/bbb'</span></span><br></pre></td></tr></table></figure>
+<h3 id="path-resolve"><a href="#path-resolve" class="headerlink" title="path.resolve"></a>path.resolve</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(<span class="string">'/foo/bar'</span>, <span class="string">'./baz'</span>);</span><br><span class="line"><span class="comment">// Returns: '/foo/bar/baz'</span></span><br></pre></td></tr></table></figure>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><h3 id="path-format-options"><a href="#path-format-options" class="headerlink" title="path.format(options)"></a>path.format(options)</h3><p>返回由目标对象参数解析而成的路径字符串。<br>与 <code>path.parse</code> 相反。</p>
+<p>参数 options 包含以下这些值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">options = &#123;</span><br><span class="line">  dir: String,  // 文件夹路径</span><br><span class="line">  root: String, // 根路径</span><br><span class="line">  base: String, // 基本文件</span><br><span class="line">  name: String, // name</span><br><span class="line">  ext: String.  // 文件扩展名</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如果 <code>options.dir</code> 存在，则 <code>options.root</code> 将被忽略</li>
+<li>如果 <code>options.base</code> 存在，则 <code>options.ext</code> 和 <code>options.name</code> 将被忽略</li>
+</ul>
+<h3 id="path-parse-path"><a href="#path-parse-path" class="headerlink" title="path.parse(path)"></a>path.parse(path)</h3><p>解析目标路径，返回对象（同上面的options）</p>
+<h2 id="其他-api"><a href="#其他-api" class="headerlink" title="其他 api"></a>其他 api</h2><h3 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h3><p>返回最后的路径。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>);</span><br><span class="line"><span class="comment">// Returns: 'quux.html'</span></span><br><span class="line"></span><br><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'.html'</span>);</span><br><span class="line"><span class="comment">// Returns: 'quux'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="path-delimiter"><a href="#path-delimiter" class="headerlink" title="path.delimiter"></a>path.delimiter</h3><p>返回系统分隔符。</p>
+<ul>
+<li>Windows 是<code>;</code></li>
+<li>POSIX 是 <code>:</code></li>
+</ul>
+<h3 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h3><p>返回目标路径所在的文件夹名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.dirname(&apos;/foo/bar/baz/asdf/quux&apos;);</span><br><span class="line">// Returns: &apos;/foo/bar/baz/asdf&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h3><p>返回目标路径扩展名（字符串）。</p>
+<ul>
+<li>无扩展名，则返回空</li>
+<li>以 <code>.</code> 结尾，则返回 <code>.</code></li>
+<li>以 <code>.</code> 开头，则返回空</li>
+</ul>
+<h3 id="path-isAbsolute-path"><a href="#path-isAbsolute-path" class="headerlink" title="path.isAbsolute(path)"></a>path.isAbsolute(path)</h3><p>判断目标路径是否是绝对路径，返回布尔值。</p>
+<h3 id="path-sep"><a href="#path-sep" class="headerlink" title="path.sep"></a>path.sep</h3><p>返回系统分隔符</p>
+<h3 id="path-posix"><a href="#path-posix" class="headerlink" title="path.posix"></a>path.posix</h3><p>提供POSIX系统下的专属方法</p>
+<h3 id="path-win32"><a href="#path-win32" class="headerlink" title="path.win32"></a>path.win32</h3><p>提供windows系统下的专属方法</p>
+<h3 id="path-toNamespacedPath-path"><a href="#path-toNamespacedPath-path" class="headerlink" title="path.toNamespacedPath(path)"></a>path.toNamespacedPath(path)</h3><p>windows平台专属，提供一个等价的命名盘符。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>详细的数据还是看<a href="!https://nodejs.org/api/path.html">官方文档</a>比较好，本文只是一个简单的介绍。实际中，先了解，再使用，总比一头雾水要好。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://p2yang.github.io">李二夜</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://p2yang.github.io/blog/2018/01/03/node-path/">http://p2yang.github.io/blog/2018/01/03/node-path/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/blog/tags/node/">node</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/blog/2018/01/04/node-querystring/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Node API - Querystring</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/blog/2017/12/11/html-print/">
+        <span class="next-text nav-default">关于网页打印的开发实践</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+  <script src="https://utteranc.es/client.js"
+    repo="p2yang/blog"
+    issue-term="url"
+    label="documentation"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2016 -
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">李二夜</span>
+    
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

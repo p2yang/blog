@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="frp 内网穿透实践"/>
+
+
+
+
+  <meta name="keywords" content="http, 李二夜's Blog" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="李二夜's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://p2yang.github.io/blog/2018/01/11/net-cross-by-frp/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> frp 内网穿透实践 - 李二夜's Blog </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">李二夜's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/blog/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/blog/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/blog/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">李二夜's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          frp 内网穿透实践
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-11
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/blog/blog/2018/01/11/net-cross-by-frp/"
+             data-title="frp 内网穿透实践">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server配置和启动"><span class="toc-text">server配置和启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载安装"><span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改配置"><span class="toc-text">修改配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解析个域名先"><span class="toc-text">解析个域名先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frp-client配置与连接"><span class="toc-text">frp client配置与连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶"><span class="toc-text">进阶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>假设你在本地开发一个网站，需要在浏览器上进行测试，一般直接用IP访问即可，麻烦一点的可以设置代理。但如果有这样一种浏览器，她只能访问公网上的站点，完全忽视以上两种方法的搭讪，这个时候我们就可以使用“内网穿透”了。实现方法有很多，这里记录一下我采用frp实现此功能的过程。</p>
+<a id="more"></a>
+<p><a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">frp</a>是github上的一个开源项目，配置起来很简单。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>我们需要一台服务器来运行frp server，然后本地运行frp client端。最好还有一个域名来快速访问（当然，没有也可以，无名胜有名嘛）。</p>
+<ul>
+<li>一台服务器</li>
+<li>一个域名</li>
+<li>frp server端</li>
+<li>frp client端</li>
+</ul>
+<p>点击前往<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">frp下载</a>，选择对应的系统版本，下载包中包含了server端和client端。</p>
+<h2 id="server配置和启动"><a href="#server配置和启动" class="headerlink" title="server配置和启动"></a>server配置和启动</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>在服务器上，选择好目录，执行以下命令下载frp:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.14.1/frp_0.14.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>然后，解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf frp_0.14.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>解压出的文件夹中server和client的配置, 如下图示<br><img src="/blog/images/frp/server.png" alt="frp_0.14.1_linux_386"></p>
+<p>这里，我们只需要用到 <code>frps</code> 和 <code>frps.ini</code> 两个文件。</p>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>我们在默认配置下添加 http 访问端口配置：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vhost_http_port = 8080</span><br></pre></td></tr></table></figure></p>
+<p><code>frps.ini</code> 结果如下：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 8080</span><br></pre></td></tr></table></figure></p>
+<p>接下来就可以启动了。</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>在当前目录下执行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure></p>
+<p>可以看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">▶ ./frps -c ./frps.ini</span><br><span class="line">2018/01/11 19:57:37 [I] [service.go:88] frps tcp listen on 0.0.0.0:7000</span><br><span class="line">2018/01/11 19:57:37 [I] [service.go:117] http service listen on 0.0.0.0:8080</span><br><span class="line">2018/01/11 19:57:37 [I] [main.go:112] Start frps success</span><br><span class="line">2018/01/11 19:57:37 [I] [main.go:114] PrivilegeMode is enabled, you should pay more attention to security issues</span><br></pre></td></tr></table></figure></p>
+<p>到此，server端启动完成，接下来看看本地该如何（注意，请勿关闭server，如要后台运行请用其他辅助工具，或看升级介绍）。</p>
+<h3 id="解析个域名先"><a href="#解析个域名先" class="headerlink" title="解析个域名先"></a>解析个域名先</h3><p>为了方便访问，我们先添加一条解析记录吧。<br>给自己的域名<a href="http://p2yang.com" target="_blank" rel="noopener">p2yang.com</a>添加一条A记录，解析到上面的服务器IP(假设是xx.xx.xx.xx), 这里二级域名设为 work.</p>
+<p>然后，来配置客户端吧。</p>
+<h3 id="frp-client配置与连接"><a href="#frp-client配置与连接" class="headerlink" title="frp client配置与连接"></a>frp client配置与连接</h3><p>根据本机系统下载客户端。这里会用到两个文件: <code>frpc</code> 和 <code>frpc.ini</code>.<br>打开<code>frpc.ini</code>, 添加配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = xx.xx.xx.xx</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = www.yourdomain.com</span><br></pre></td></tr></table></figure></p>
+<p>说明：这里的 <code>server_addr</code> 是你启动 frp server的服务器; <code>type</code> 设为 http; <code>custom_domains</code> 设为解析的域名; 其他默认即可。<code>[web]</code> 中括号中的名字可以改。</p>
+<p>执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">▶ ./frpc -c ./frpc.ini</span><br><span class="line">2018/01/11 20:11:03 [I] [control.go:277] [7621df25976e76bb] login to server success, get run id [7621df25976e76bb], server udp port [0]</span><br><span class="line">2018/01/11 20:11:03 [I] [control.go:412] [7621df25976e76bb] [web] start proxy success</span><br></pre></td></tr></table></figure></p>
+<p>到此，启动成功！！！<br>开启本地静态服务，打开链接<a href="http://work.p2yang.com:8080" target="_blank" rel="noopener">http://work.p2yang.com:8080</a>, 即可在公网上访问本地的开发资源。</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>如何让多个开发者共用一个frp server，并享用自定义的二级域名？</p>
+<p>这里frp配置也很简单。</p>
+<p><code>frps.ini</code> 添加配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 8080</span><br><span class="line"></span><br><span class="line">subdomain_host = p2yang.com</span><br></pre></td></tr></table></figure></p>
+<p><code>frpc.ini</code> 添加配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = xx.xx.xx.xx</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">subdomain = work</span><br></pre></td></tr></table></figure></p>
+<p>注意，不同用户的 <code>[web]</code> 配置需要取不同的名字，<code>subdomain</code> 自己定义即可。当然，重名会产生冲突，请保持独一无二。</p>
+<p>域名添加 <code>*</code> 泛解析。</p>
+<p>然后，不同的用户启动自己的frp客户端，即可共享frp server了。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>frp还支持其他许多功能，点击查看<a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="noopener">官方中文文档</a>。我就先到这里吧。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://p2yang.github.io">李二夜</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://p2yang.github.io/blog/2018/01/11/net-cross-by-frp/">http://p2yang.github.io/blog/2018/01/11/net-cross-by-frp/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/blog/tags/http/">http</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/blog/2018/01/24/parcel-vue/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Parcel + Vue 尝鲜</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/blog/2018/01/10/opera-mini/">
+        <span class="next-text nav-default">关于 Opera Mini 开发的那些事儿</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+  <script src="https://utteranc.es/client.js"
+    repo="p2yang/blog"
+    issue-term="url"
+    label="documentation"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2016 -
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">李二夜</span>
+    
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

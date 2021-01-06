@@ -18,8 +18,8 @@
   
   <entry>
     <title>Mac 精品屏保推荐</title>
-    <link href="http://p2yang.github.io/2020/06/12/pictures/"/>
-    <id>http://p2yang.github.io/2020/06/12/pictures/</id>
+    <link href="http://p2yang.github.io//blog/2020/06/12/pictures/"/>
+    <id>http://p2yang.github.io//blog/2020/06/12/pictures/</id>
     <published>2020-06-12T09:55:26.000Z</published>
     <updated>2020-06-12T09:55:26.000Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>HTML 应用 a 标签拨打电话字符问题</title>
-    <link href="http://p2yang.github.io/2020/03/05/web-tel/"/>
-    <id>http://p2yang.github.io/2020/03/05/web-tel/</id>
+    <link href="http://p2yang.github.io//blog/2020/03/05/web-tel/"/>
+    <id>http://p2yang.github.io//blog/2020/03/05/web-tel/</id>
     <published>2020-03-05T13:20:33.000Z</published>
     <updated>2020-03-05T13:20:33.000Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>【实用推荐】npm script 便捷执行工具 - ntl</title>
-    <link href="http://p2yang.github.io/2020/02/28/package-ntl/"/>
-    <id>http://p2yang.github.io/2020/02/28/package-ntl/</id>
+    <link href="http://p2yang.github.io//blog/2020/02/28/package-ntl/"/>
+    <id>http://p2yang.github.io//blog/2020/02/28/package-ntl/</id>
     <published>2020-02-28T04:05:24.000Z</published>
     <updated>2020-02-28T04:05:24.000Z</updated>
     
@@ -81,8 +81,8 @@
   
   <entry>
     <title>使用 fetch 方法下载后端文件</title>
-    <link href="http://p2yang.github.io/2020/02/12/fetch-download/"/>
-    <id>http://p2yang.github.io/2020/02/12/fetch-download/</id>
+    <link href="http://p2yang.github.io//blog/2020/02/12/fetch-download/"/>
+    <id>http://p2yang.github.io//blog/2020/02/12/fetch-download/</id>
     <published>2020-02-12T07:17:34.000Z</published>
     <updated>2020-02-12T07:17:34.000Z</updated>
     
@@ -101,8 +101,8 @@
   
   <entry>
     <title>Webpack DllPlugin 基本应用与实践</title>
-    <link href="http://p2yang.github.io/2020/01/19/webpack-dll/"/>
-    <id>http://p2yang.github.io/2020/01/19/webpack-dll/</id>
+    <link href="http://p2yang.github.io//blog/2020/01/19/webpack-dll/"/>
+    <id>http://p2yang.github.io//blog/2020/01/19/webpack-dll/</id>
     <published>2020-01-19T14:37:31.000Z</published>
     <updated>2020-01-19T14:37:31.000Z</updated>
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>Google Tag Manager 实用自定义 Variable 和 Trigger</title>
-    <link href="http://p2yang.github.io/2020/01/16/gtm-variables/"/>
-    <id>http://p2yang.github.io/2020/01/16/gtm-variables/</id>
+    <link href="http://p2yang.github.io//blog/2020/01/16/gtm-variables/"/>
+    <id>http://p2yang.github.io//blog/2020/01/16/gtm-variables/</id>
     <published>2020-01-16T14:19:47.000Z</published>
     <updated>2020-01-16T14:19:47.000Z</updated>
     
@@ -141,8 +141,8 @@
   
   <entry>
     <title>Google Tag Manager 基本应用与实践</title>
-    <link href="http://p2yang.github.io/2020/01/15/gtm-basic/"/>
-    <id>http://p2yang.github.io/2020/01/15/gtm-basic/</id>
+    <link href="http://p2yang.github.io//blog/2020/01/15/gtm-basic/"/>
+    <id>http://p2yang.github.io//blog/2020/01/15/gtm-basic/</id>
     <published>2020-01-15T08:05:36.000Z</published>
     <updated>2020-01-15T08:05:36.000Z</updated>
     
@@ -162,8 +162,8 @@
   
   <entry>
     <title>Webhooks - 网站自动化部署实践</title>
-    <link href="http://p2yang.github.io/2019/03/18/webhooks-deploy/"/>
-    <id>http://p2yang.github.io/2019/03/18/webhooks-deploy/</id>
+    <link href="http://p2yang.github.io//blog/2019/03/18/webhooks-deploy/"/>
+    <id>http://p2yang.github.io//blog/2019/03/18/webhooks-deploy/</id>
     <published>2019-03-18T07:10:03.000Z</published>
     <updated>2019-03-20T03:17:03.000Z</updated>
     
@@ -186,8 +186,8 @@
   
   <entry>
     <title>Node 图片绘制及合成介绍</title>
-    <link href="http://p2yang.github.io/2019/01/17/node-draw-image/"/>
-    <id>http://p2yang.github.io/2019/01/17/node-draw-image/</id>
+    <link href="http://p2yang.github.io//blog/2019/01/17/node-draw-image/"/>
+    <id>http://p2yang.github.io//blog/2019/01/17/node-draw-image/</id>
     <published>2019-01-17T02:14:09.000Z</published>
     <updated>2019-01-17T02:14:09.000Z</updated>
     
@@ -206,8 +206,8 @@
   
   <entry>
     <title>iOS Simulator 模拟器 - web 页面调试实践</title>
-    <link href="http://p2yang.github.io/2018/11/06/simulator-dev/"/>
-    <id>http://p2yang.github.io/2018/11/06/simulator-dev/</id>
+    <link href="http://p2yang.github.io//blog/2018/11/06/simulator-dev/"/>
+    <id>http://p2yang.github.io//blog/2018/11/06/simulator-dev/</id>
     <published>2018-11-06T08:06:40.000Z</published>
     <updated>2018-11-06T08:06:40.000Z</updated>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>Canvas 跨域脱坑实践</title>
-    <link href="http://p2yang.github.io/2018/11/02/canvas-to-img/"/>
-    <id>http://p2yang.github.io/2018/11/02/canvas-to-img/</id>
+    <link href="http://p2yang.github.io//blog/2018/11/02/canvas-to-img/"/>
+    <id>http://p2yang.github.io//blog/2018/11/02/canvas-to-img/</id>
     <published>2018-11-02T06:35:29.000Z</published>
     <updated>2018-11-02T06:35:29.000Z</updated>
     
@@ -255,8 +255,8 @@
   
   <entry>
     <title>Google Robots</title>
-    <link href="http://p2yang.github.io/2018/09/12/google-robots/"/>
-    <id>http://p2yang.github.io/2018/09/12/google-robots/</id>
+    <link href="http://p2yang.github.io//blog/2018/09/12/google-robots/"/>
+    <id>http://p2yang.github.io//blog/2018/09/12/google-robots/</id>
     <published>2018-09-12T11:33:04.000Z</published>
     <updated>2018-09-13T08:05:04.000Z</updated>
     
@@ -278,8 +278,8 @@
   
   <entry>
     <title>webpack profile 文件分析功能</title>
-    <link href="http://p2yang.github.io/2018/07/25/webpack-profile-stats/"/>
-    <id>http://p2yang.github.io/2018/07/25/webpack-profile-stats/</id>
+    <link href="http://p2yang.github.io//blog/2018/07/25/webpack-profile-stats/"/>
+    <id>http://p2yang.github.io//blog/2018/07/25/webpack-profile-stats/</id>
     <published>2018-07-25T02:27:47.000Z</published>
     <updated>2018-07-25T02:27:47.000Z</updated>
     
@@ -292,8 +292,8 @@
   
   <entry>
     <title>Sublime Text 实用插件</title>
-    <link href="http://p2yang.github.io/2018/05/21/sublime-text-plugins/"/>
-    <id>http://p2yang.github.io/2018/05/21/sublime-text-plugins/</id>
+    <link href="http://p2yang.github.io//blog/2018/05/21/sublime-text-plugins/"/>
+    <id>http://p2yang.github.io//blog/2018/05/21/sublime-text-plugins/</id>
     <published>2018-05-21T11:04:05.000Z</published>
     <updated>2018-05-21T11:04:05.000Z</updated>
     
@@ -314,8 +314,8 @@
   
   <entry>
     <title>Node API - URL</title>
-    <link href="http://p2yang.github.io/2018/05/15/node-url/"/>
-    <id>http://p2yang.github.io/2018/05/15/node-url/</id>
+    <link href="http://p2yang.github.io//blog/2018/05/15/node-url/"/>
+    <id>http://p2yang.github.io//blog/2018/05/15/node-url/</id>
     <published>2018-05-15T01:33:10.000Z</published>
     <updated>2018-05-15T01:33:10.000Z</updated>
     
@@ -334,8 +334,8 @@
   
   <entry>
     <title>白用了那么多年的 ‘oh-my-zsh’ -- Plugins</title>
-    <link href="http://p2yang.github.io/2018/03/22/zsh/"/>
-    <id>http://p2yang.github.io/2018/03/22/zsh/</id>
+    <link href="http://p2yang.github.io//blog/2018/03/22/zsh/"/>
+    <id>http://p2yang.github.io//blog/2018/03/22/zsh/</id>
     <published>2018-03-22T11:02:56.000Z</published>
     <updated>2018-03-22T11:02:56.000Z</updated>
     
@@ -358,8 +358,8 @@
   
   <entry>
     <title>Gogs + Docker 搭建 Git 服务器实践</title>
-    <link href="http://p2yang.github.io/2018/03/07/docker-gogs/"/>
-    <id>http://p2yang.github.io/2018/03/07/docker-gogs/</id>
+    <link href="http://p2yang.github.io//blog/2018/03/07/docker-gogs/"/>
+    <id>http://p2yang.github.io//blog/2018/03/07/docker-gogs/</id>
     <published>2018-03-07T04:59:00.000Z</published>
     <updated>2018-03-07T04:59:00.000Z</updated>
     
@@ -380,8 +380,8 @@
   
   <entry>
     <title>parcel-vue环境下pug支持实践</title>
-    <link href="http://p2yang.github.io/2018/01/30/parcel-vue-pug/"/>
-    <id>http://p2yang.github.io/2018/01/30/parcel-vue-pug/</id>
+    <link href="http://p2yang.github.io//blog/2018/01/30/parcel-vue-pug/"/>
+    <id>http://p2yang.github.io//blog/2018/01/30/parcel-vue-pug/</id>
     <published>2018-01-30T01:18:42.000Z</published>
     <updated>2018-01-30T01:18:42.000Z</updated>
     
@@ -402,8 +402,8 @@
   
   <entry>
     <title>Parcel 开启三大CSS预处理器--Stylus/Less/Sass</title>
-    <link href="http://p2yang.github.io/2018/01/26/parcel-step-2/"/>
-    <id>http://p2yang.github.io/2018/01/26/parcel-step-2/</id>
+    <link href="http://p2yang.github.io//blog/2018/01/26/parcel-step-2/"/>
+    <id>http://p2yang.github.io//blog/2018/01/26/parcel-step-2/</id>
     <published>2018-01-26T11:59:28.000Z</published>
     <updated>2018-01-26T11:59:28.000Z</updated>
     
@@ -426,8 +426,8 @@
   
   <entry>
     <title>Parcel + Vue 尝鲜</title>
-    <link href="http://p2yang.github.io/2018/01/24/parcel-vue/"/>
-    <id>http://p2yang.github.io/2018/01/24/parcel-vue/</id>
+    <link href="http://p2yang.github.io//blog/2018/01/24/parcel-vue/"/>
+    <id>http://p2yang.github.io//blog/2018/01/24/parcel-vue/</id>
     <published>2018-01-24T11:46:26.000Z</published>
     <updated>2018-01-24T11:46:26.000Z</updated>
     
