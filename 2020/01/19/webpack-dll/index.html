@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Webpack DllPlugin 基本应用与实践"/>
+
+
+
+
+  <meta name="keywords" content="webpack, 李二夜's Blog" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="李二夜's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://p2yang.github.io/2020/01/19/webpack-dll/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Webpack DllPlugin 基本应用与实践 - 李二夜's Blog </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">李二夜's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/blog/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/blog/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/blog/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">李二夜's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Webpack DllPlugin 基本应用与实践
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-19
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/blog/2020/01/19/webpack-dll/"
+             data-title="Webpack DllPlugin 基本应用与实践">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单独打包-dll-相关文件；"><span class="toc-text">单独打包 dll 相关文件；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-webpack-DllReferencePlugin-引入-webpack-主配置；"><span class="toc-text">使用 webpack.DllReferencePlugin 引入 webpack 主配置；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入外链；"><span class="toc-text">插入外链；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-示例"><span class="toc-text">Github 示例</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p><code>Webpack</code> 内置插件 <code>DllPlugin</code> 可以将一些较长时间内、稳定不变的包或组件拆分出来，以 <code>script</code> 外链的形式引入页面，以减少 <code>webpack</code> 打包时间，长期缓存。本文记录了 Webpack 内置插件 <code>DllPlugin</code> 基本应用方法。</p>
+<a id="more"></a>
+<p>本文环境以 <a href="mailto:`webpack@4.x" target="_blank" rel="noopener">`webpack@4.x</a><code>+</code><a href="mailto:node@10.x" target="_blank" rel="noopener">node@10.x</a>` 为主，应用分 3 步：</p>
+<ol>
+<li>单独打包 <code>dll</code> 相关文件；</li>
+<li>引入 <code>webpack</code> 配置；</li>
+<li>插入外链；</li>
+</ol>
+<h2 id="单独打包-dll-相关文件；"><a href="#单独打包-dll-相关文件；" class="headerlink" title="单独打包 dll 相关文件；"></a>单独打包 <code>dll</code> 相关文件；</h2><p>新建 <code>webpack</code> 配置文件 <code>webpack.dll.js</code>，添加 <code>dll</code> 相关文件打包配置，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.dll.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'production'</span> : <span class="string">'development'</span>,</span><br><span class="line">  entry: &#123;</span><br><span class="line">    vendor: [</span><br><span class="line">      <span class="string">'vue'</span>,</span><br><span class="line">      <span class="string">'vue-router'</span>,</span><br><span class="line">      <span class="string">'vuex'</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'static/lib'</span>),</span><br><span class="line">    filename: <span class="string">'[name].dll.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllPlugin(&#123;</span><br><span class="line">      name: <span class="string">'[name]_[hash]'</span>,</span><br><span class="line">      path: path.join(__dirname, <span class="string">'.'</span>, <span class="string">'[name]_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在 <code>package.json</code> scripts 中添加命令:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"build:dll"</span>: <span class="string">"webpack --config dll/webpack.dll.js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置好后，执行命令：</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm run build:dll</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn build:dll</span><br></pre></td></tr></table></figure>
+<p>这里会将我们选取 vue 三件套打包出来(Github示例地址请看下文)，生成以下两个文件：</p>
+<ul>
+<li><code>vendor_manifest.json</code>: dll 配置文件，需要在 <code>webpack</code> 主配置文件中引入；</li>
+<li><code>vendor.dll.js</code>: 目标依赖整合文件，最后需要外链。</li>
+</ul>
+<p>下面，来看下这两个文件的使用吧。</p>
+<h2 id="使用-webpack-DllReferencePlugin-引入-webpack-主配置；"><a href="#使用-webpack-DllReferencePlugin-引入-webpack-主配置；" class="headerlink" title="使用 webpack.DllReferencePlugin 引入 webpack 主配置；"></a>使用 <code>webpack.DllReferencePlugin</code> 引入 <code>webpack</code> 主配置；</h2><p>在 <code>webpack</code> 主配置文件中引入 <code>vendor_manifest.json</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	<span class="comment">// ...此处省略其他配置</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.DllReferencePlugin(&#123;</span><br><span class="line">      context: __dirname,</span><br><span class="line">      manifest: <span class="built_in">require</span>(<span class="string">'./vendor_manifest.json'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入外链；"><a href="#插入外链；" class="headerlink" title="插入外链；"></a>插入外链；</h2><p>直接在 html 入口文件中引入。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/static/lib/vendor.dll.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>启动本地服务看看吧。</p>
+<p>注：可使用 <a href="https://www.npmjs.com/package/anywhere" target="_blank" rel="noopener"><code>anywhere</code></a> 或者 <a href="https://www.npmjs.com/package/http-server" target="_blank" rel="noopener"><code>http-server</code></a> 快速启动本地静态服务器。</p>
+<h2 id="Github-示例"><a href="#Github-示例" class="headerlink" title="Github 示例"></a>Github 示例</h2><p><a href="https://github.com/p2yang/webpack-examples/tree/master/dll" target="_blank" rel="noopener">Github 示例</a><br><a href="http://blog.p2yang.com" target="_blank" rel="noopener">个人博客</a></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://p2yang.github.io">李二夜</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://p2yang.github.io/2020/01/19/webpack-dll/">http://p2yang.github.io/2020/01/19/webpack-dll/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/blog/tags/webpack/">webpack</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2020/02/12/fetch-download/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">使用 fetch 方法下载后端文件</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2020/01/16/gtm-variables/">
+        <span class="next-text nav-default">Google Tag Manager 实用自定义 Variable 和 Trigger</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+  <script src="https://utteranc.es/client.js"
+    repo="p2yang/blog"
+    issue-term="url"
+    label="documentation"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2016 -
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">李二夜</span>
+    
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

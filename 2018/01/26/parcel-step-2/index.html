@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Parcel 开启三大CSS预处理器--Stylus/Less/Sass"/>
+
+
+
+
+  <meta name="keywords" content="parcel, vue, css, 李二夜's Blog" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="李二夜's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://p2yang.github.io/2018/01/26/parcel-step-2/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Parcel 开启三大CSS预处理器--Stylus/Less/Sass - 李二夜's Blog </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">李二夜's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/blog/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/blog/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/blog/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">李二夜's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Parcel 开启三大CSS预处理器--Stylus/Less/Sass
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-26
+        </span>
+        
+        
+        <div class="post-visits"
+             data-url="/blog/2018/01/26/parcel-step-2/"
+             data-title="Parcel 开启三大CSS预处理器--Stylus/Less/Sass">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#支持-stylus"><span class="toc-text">支持 stylus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持-less"><span class="toc-text">支持 less</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持-sass"><span class="toc-text">支持 sass</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>Parcel 默认支持 Stylus/Less/Sass, 只不过需要安装对应的npm依赖。官方文档言语模糊，我们这里便来实践一下具体如何开启tylus/Less/Sass。</p>
+<a id="more"></a>
+<h2 id="支持-stylus"><a href="#支持-stylus" class="headerlink" title="支持 stylus"></a>支持 <strong>stylus</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add stylus --dev</span><br></pre></td></tr></table></figure>
+<p>如在 App.vue 同目录下新建<strong><em>style.styl</em></strong> 样式文件, 然后引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// template 和 script 内容略过</span><br><span class="line">&lt;style lang=&quot;stylus&quot;&gt;</span><br><span class="line">@import &apos;./style&apos;;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>启动，会看到 Parcel 默认将样式文件内联到<code>&lt;head&gt;</code>标签中。</p>
+<h2 id="支持-less"><a href="#支持-less" class="headerlink" title="支持 less"></a>支持 <strong>less</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add less --dev</span><br></pre></td></tr></table></figure>
+<p>如在 App.vue 同目录下新建<strong><em>style.less</em></strong> 样式文件, 然后引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// template 和 script 内容略过</span><br><span class="line">&lt;style lang=&quot;less&quot;&gt;</span><br><span class="line">@import &apos;./style&apos;;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="支持-sass"><a href="#支持-sass" class="headerlink" title="支持 sass"></a>支持 <strong>sass</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add node-sass --dev</span><br></pre></td></tr></table></figure>
+<p>如在 App.vue 同目录下新建<strong><em>style.scss</em></strong> 样式文件, 然后引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// template 和 script 内容略过</span><br><span class="line">&lt;style lang=&quot;scss&quot;&gt;</span><br><span class="line">@import &apos;./style&apos;;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：上述如果启动失败，可以重装 <code>babel-preset-env</code> 依赖。</p>
+</blockquote>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>实践过程中发现一个问题： 在vue 组件 <code>&lt;style&gt;</code> 中，通过 <code>@import</code>引入样式文件后，修改样式文件 HMR 失效。 这是个让人很受伤的问题。该问题是<code>parcel-plugin-vue</code>(<a href="https://github.com/BoltDoggy/parcel-plugin-vue/issues/18" target="_blank" rel="noopener">查看issue18</a>) 导致的，目前还未解决。</p>
+<p>我们这里可以先在vue 组件的 <code>&lt;script&gt;</code>中将样式 import 进来， HMR有效。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://p2yang.github.io">李二夜</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://p2yang.github.io/2018/01/26/parcel-step-2/">http://p2yang.github.io/2018/01/26/parcel-step-2/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/blog/tags/parcel/">parcel</a>
+            
+              <a href="/blog/tags/vue/">vue</a>
+            
+              <a href="/blog/tags/css/">css</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/01/30/parcel-vue-pug/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">parcel-vue环境下pug支持实践</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/01/24/parcel-vue/">
+        <span class="next-text nav-default">Parcel + Vue 尝鲜</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+  <script src="https://utteranc.es/client.js"
+    repo="p2yang/blog"
+    issue-term="url"
+    label="documentation"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2016 -
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">李二夜</span>
+    
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

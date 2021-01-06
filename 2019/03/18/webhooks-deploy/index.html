@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Webhooks - 网站自动化部署实践"/>
+
+
+
+
+  <meta name="keywords" content="git, node, 李二夜's Blog" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="李二夜's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://p2yang.github.io/2019/03/18/webhooks-deploy/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NLZZ7XB');</script>
+	<!-- End Google Tag Manager -->
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "ut6HO7MB2apojTyhheCl2UwS-gzGzoHsz",
+      appKey: "qeGELxvigShCO6mw6Hap4Mjp"
+    });
+  </script>
+
+
+
+
+
+    <title> Webhooks - 网站自动化部署实践 - 李二夜's Blog </title>
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZZ7XB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">李二夜's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/blog/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/blog/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/blog/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">李二夜's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Webhooks - 网站自动化部署实践
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-03-18
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/blog/categories/web/">web</a>
+            
+          </div>
+        
+        
+        <div class="post-visits"
+             data-url="/blog/2019/03/18/webhooks-deploy/"
+             data-title="Webhooks - 网站自动化部署实践">
+            阅读次数
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动化-Shell-脚本"><span class="toc-text">自动化 Shell 脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-Server-实现更新服务"><span class="toc-text">Node Server 实现更新服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-text">server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-反向代理"><span class="toc-text">nginx 反向代理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Webhook"><span class="toc-text">配置 Webhook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初次部署"><span class="toc-text">初次部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pm2-守护"><span class="toc-text">pm2 守护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先全局安装-pm2"><span class="toc-text">首先全局安装 pm2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动服务"><span class="toc-text">启动服务:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看服务列表"><span class="toc-text">查看服务列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看日志"><span class="toc-text">查看日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>本文记录了使用 <code>Github</code> 的 <code>Webhooks</code> 进行网站自动化部署的实践步骤。</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我们将项目代码托管到 Github 上，为方便服务端更新网站代码，启用 Webhooks 来实现更新服务。</p>
+<p>整个过程分为 4 步：</p>
+<ol>
+<li>自动化 Shell 脚本更新代码;</li>
+<li>Node Server 监听 webhook push 事件;</li>
+<li>pm2 守护 Server 进程</li>
+<li>配置 Github webhooks.</li>
+</ol>
+<p>配置所需：</p>
+<ul>
+<li>shell 脚本</li>
+<li>Node Server</li>
+<li>github-webhook-handler</li>
+<li>pm2</li>
+</ul>
+<h2 id="自动化-Shell-脚本"><a href="#自动化-Shell-脚本" class="headerlink" title="自动化 Shell 脚本"></a>自动化 Shell 脚本</h2><blockquote>
+<p>该脚本的目的是在目标服务器上 pull 远程代码以实现迭代更新。</p>
+</blockquote>
+<p>当我们在本地开发测试后，将代码 push 到 Github 上，会触发已配置好的 Webhooks，在目标服务器上执行这段 Shell 脚本。<br>我们在项目 root 目录下创建 <code>deploy.sh</code> 文件，添加以下内容。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 确保脚本抛出遇到的错误</span></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /www/learning-handbook</span><br><span class="line"></span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git clean -f</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>实现了 Shell 脚本后，我们需要提供一个 Server 给 Webhooks 调用它。</p>
+<h2 id="Node-Server-实现更新服务"><a href="#Node-Server-实现更新服务" class="headerlink" title="Node Server 实现更新服务"></a>Node Server 实现更新服务</h2><p>接下来，我们通过 <code>Nodejs</code> 创建一个 Server 来实现更新服务。<br>这里我们需要借助 <code>github-webhook-handler</code> 来监听 Github webhooks 的 <code>push</code> 请求，请求成功后通过 <code>child_process</code> 执行上面的 Shell 脚本，就能在服务器上获取更新了。</p>
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><p>同样，在项目 root 下创建 <code>webhook.js</code> 代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; spawn &#125; = <span class="built_in">require</span>(<span class="string">'child_process'</span>)</span><br><span class="line"><span class="keyword">const</span> createHandler = <span class="built_in">require</span>(<span class="string">'github-webhook-handler'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这个 secret 是你在 github webhook 里设置的 secret 值</span></span><br><span class="line"><span class="keyword">const</span> handler = createHandler(&#123; <span class="attr">path</span>: <span class="string">'/deploy'</span>, <span class="attr">secret</span>: <span class="string">'xxx'</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> PORT = <span class="number">6666</span></span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  handler(req, res, err =&gt; &#123;</span><br><span class="line">    res.statusCode = <span class="number">404</span></span><br><span class="line">    res.end(<span class="string">'no such location'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;).listen(PORT)</span><br><span class="line"></span><br><span class="line">handler.on(<span class="string">'error'</span>, err =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(<span class="string">'Error:'</span>, err.message)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听到push事件的时候执行我们的自动化脚本</span></span><br><span class="line">handler.on(<span class="string">'push'</span>, event =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Received a push event for %s to %s'</span>,</span><br><span class="line">    event.payload.repository.name,</span><br><span class="line">    event.payload.ref)</span><br><span class="line">  runCommand(<span class="string">'sh'</span>, [<span class="string">'./deploy.sh'</span>], <span class="built_in">console</span>.log)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runCommand</span>(<span class="params"> cmd, args, callback </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> response = <span class="string">''</span></span><br><span class="line">    <span class="keyword">const</span> child = spawn( cmd, args )</span><br><span class="line">    child.stdout.on(<span class="string">'data'</span>, buffer =&gt; &#123; response += buffer.toString() &#125;)</span><br><span class="line">    child.stdout.on(<span class="string">'end'</span>, () =&gt; callback(response))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="nginx-反向代理"><a href="#nginx-反向代理" class="headerlink" title="nginx 反向代理"></a>nginx 反向代理</h3><p>配置 nginx 反向代理 <code>/deploy</code></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">···</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> handbook.p2yang.com;</span><br><span class="line">    ···</span><br><span class="line">    <span class="attribute">location</span> /deploy &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:6666;</span><br><span class="line">    &#125;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置-Webhook"><a href="#配置-Webhook" class="headerlink" title="配置 Webhook"></a>配置 Webhook</h2><p>Webhooks 在 Github 项目的 <code>Settings</code> 里。进入其中添加一个新的 webhook，如下图：</p>
+<p><img src="/blog/images/github-webhook.png" alt="Github webhooks"></p>
+<p>注意，由于我们上面使用的 <code>github-webhook-handler</code> 要求 <code>Content type</code> 必须设置成 <code>application/json</code>。<br><code>Payload URL</code> 和 <code>Secret</code> 值与 Server 配置需要保持一致。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = createHandler(&#123; <span class="attr">path</span>: <span class="string">'/deploy'</span>, <span class="attr">secret</span>: <span class="string">'xxx'</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p>当服务全部配置成功后，webhook 的状态如下:</p>
+<p><img src="/blog/images/github-webhook-status.png" alt="Github webhook push status"></p>
+<h2 id="初次部署"><a href="#初次部署" class="headerlink" title="初次部署"></a>初次部署</h2><p>第一次部署，需要先在目标服务器上 git clone 下项目代码。</p>
+<h2 id="pm2-守护"><a href="#pm2-守护" class="headerlink" title="pm2 守护"></a>pm2 守护</h2><p>这里使用 <code>pm2</code> 来守护 Server 更新服务。基本用法如下：</p>
+<h3 id="首先全局安装-pm2"><a href="#首先全局安装-pm2" class="headerlink" title="首先全局安装 pm2:"></a>首先全局安装 <code>pm2</code>:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install pm2 -g</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务:"></a>启动服务:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start webhook.js</span><br></pre></td></tr></table></figure>
+<h3 id="查看服务列表"><a href="#查看服务列表" class="headerlink" title="查看服务列表"></a>查看服务列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 list</span><br></pre></td></tr></table></figure>
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 <span class="built_in">log</span> [服务名或服务id]</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm2 stop</span><br><span class="line">pm2 restart</span><br><span class="line">pm2 delete</span><br></pre></td></tr></table></figure>
+<p>大功告成！</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>能自动的就自动吧，我们的时间可以花在更有趣的事情上！</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://p2yang.github.io">李二夜</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://p2yang.github.io/2019/03/18/webhooks-deploy/">http://p2yang.github.io/2019/03/18/webhooks-deploy/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/blog/tags/git/">git</a>
+            
+              <a href="/blog/tags/node/">node</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2020/01/15/gtm-basic/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Google Tag Manager 基本应用与实践</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2019/01/17/node-draw-image/">
+        <span class="next-text nav-default">Node 图片绘制及合成介绍</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+  <script src="https://utteranc.es/client.js"
+    repo="p2yang/blog"
+    issue-term="url"
+    label="documentation"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:p2yang@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2016 -
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">李二夜</span>
+    
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
