@@ -125,7 +125,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -134,7 +134,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -143,7 +143,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -152,7 +152,7 @@
         <li class="mobile-menu-item">
           
           
-            分类
+            Categories
           
         </li>
       </a>
@@ -173,7 +173,7 @@
           <a class="menu-item-link" href="/blog/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -182,7 +182,7 @@
           <a class="menu-item-link" href="/blog/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -191,7 +191,7 @@
           <a class="menu-item-link" href="/blog/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -200,7 +200,7 @@
           <a class="menu-item-link" href="/blog/categories/">
             
             
-              分类
+              Categories
             
           </a>
         </li>
@@ -242,7 +242,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server配置和启动"><span class="toc-text">server配置和启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载安装"><span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改配置"><span class="toc-text">修改配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解析个域名先"><span class="toc-text">解析个域名先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frp-client配置与连接"><span class="toc-text">frp client配置与连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶"><span class="toc-text">进阶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
     </div>
@@ -264,7 +264,7 @@
 <p>点击前往<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">frp下载</a>，选择对应的系统版本，下载包中包含了server端和client端。</p>
 <h2 id="server配置和启动"><a href="#server配置和启动" class="headerlink" title="server配置和启动"></a>server配置和启动</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>在服务器上，选择好目录，执行以下命令下载frp:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.14.1/frp_0.14.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure></p>
 <p>然后，解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf frp_0.14.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure></p>
-<p>解压出的文件夹中server和client的配置, 如下图示<br><img src="/images/frp/server.png" alt="frp_0.14.1_linux_386"></p>
+<p>解压出的文件夹中server和client的配置, 如下图示<br><img src="/blog/images/frp/server.png" alt="frp_0.14.1_linux_386"></p>
 <p>这里，我们只需要用到 <code>frps</code> 和 <code>frps.ini</code> 两个文件。</p>
 <h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>我们在默认配置下添加 http 访问端口配置：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vhost_http_port = 8080</span><br></pre></td></tr></table></figure></p>
 <p><code>frps.ini</code> 结果如下：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 8080</span><br></pre></td></tr></table></figure></p>
@@ -296,15 +296,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>原文作者: </span>
+      <span>Author: </span>
       <a href="http://p2yang.github.io">李二夜</a>
     </p>
     <p class="copyright-item">
-      <span>原文链接: </span>
+      <span>Link: </span>
       <a href="http://p2yang.github.io/2018/01/11/net-cross-by-frp/">http://p2yang.github.io/2018/01/11/net-cross-by-frp/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
+      <span>License: </span>
       
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -332,13 +332,13 @@
       <a class="prev" href="/blog/2018/01/24/parcel-vue/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Parcel + Vue 尝鲜</span>
-        <span class="prev-text nav-mobile">上一篇</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
       <a class="next" href="/blog/2018/01/10/opera-mini/">
         <span class="next-text nav-default">关于 Opera Mini 开发的那些事儿</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -412,11 +412,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 -
+    Theme -
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
@@ -426,7 +426,7 @@
     
       2016 -
     
-    2020
+    2021
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

@@ -125,7 +125,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -134,7 +134,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -143,7 +143,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -152,7 +152,7 @@
         <li class="mobile-menu-item">
           
           
-            分类
+            Categories
           
         </li>
       </a>
@@ -173,7 +173,7 @@
           <a class="menu-item-link" href="/blog/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -182,7 +182,7 @@
           <a class="menu-item-link" href="/blog/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -191,7 +191,7 @@
           <a class="menu-item-link" href="/blog/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -200,7 +200,7 @@
           <a class="menu-item-link" href="/blog/categories/">
             
             
-              分类
+              Categories
             
           </a>
         </li>
@@ -242,7 +242,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#根据-CSS-Selector-获取目标元素"><span class="toc-text">根据 CSS Selector 获取目标元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义-GA-Event-Category-Event-Label-变量"><span class="toc-text">自定义 GA Event Category / Event Label 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义-Data-Layer-变量"><span class="toc-text">自定义 Data Layer 变量</span></a></li></ol>
     </div>
@@ -256,7 +256,7 @@
 <p>Google Tag Manager 支持多种类型的自定义变量，前端同学可自行选择使用哪些。</p>
 <h2 id="根据-CSS-Selector-获取目标元素"><a href="#根据-CSS-Selector-获取目标元素" class="headerlink" title="根据 CSS Selector 获取目标元素"></a>根据 CSS Selector 获取目标元素</h2><p>设置变量名为 <code>Find Closest</code>, 变量类型为 <code>Custom JavaScript</code>, 脚本内容如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target, selector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!target.matches(selector) &amp;&amp; !target.matches(<span class="string">'body'</span>)) &#123;</span><br><span class="line">      target = target.parentElement;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target.matches(selector) ? target : <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/gtm/gtm2-variable.png" alt="GTM Variable"></p>
+<p><img src="/blog/images/gtm/gtm2-variable.png" alt="GTM Variable"></p>
 <p>下面会有具体应用。</p>
 <h2 id="自定义-GA-Event-Category-Event-Label-变量"><a href="#自定义-GA-Event-Category-Event-Label-变量" class="headerlink" title="自定义 GA Event Category / Event Label 变量"></a>自定义 GA Event Category / Event Label 变量</h2><p>在关联配置 GA 的 Event track 类型中，可以使用变量，而不用把值写死。同样是先命名变量，设置变量类型为 <code>Custom JavaScript</code>。<br>脚本内容示例如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> el = &#123;&#123;Find Closest&#125;&#125;(&#123;&#123;Click Element&#125;&#125;, <span class="string">'[data-label]'</span>);</span><br><span class="line">	<span class="keyword">return</span> el ? el.dataset.label : <span class="string">''</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -267,7 +267,7 @@
 <p>其中 <code>xxx</code> 即为此处需要定义的 Data Layer Variable Name。</p>
 <p>再建立一个自定义事件变量，变量类型选 <code>Custom Event</code>。</p>
 <p>然后，可以建一个 <code>Custom Event</code> 类型的 Trigger 来响应手动上报事件。<br>其中 Event Name 可使用正则表达式，如：<code>[A-Z0-9_]+</code>。<br>注意，需要加一条匹配规则，用来排除官方的事件类型 - <code>gtm</code>，示图如下：</p>
-<p><img src="/images/gtm/gtm2-trigger.png" alt="GTM Trigger"></p>
+<p><img src="/blog/images/gtm/gtm2-trigger.png" alt="GTM Trigger"></p>
 
       
     </div>
@@ -278,15 +278,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>原文作者: </span>
+      <span>Author: </span>
       <a href="http://p2yang.github.io">李二夜</a>
     </p>
     <p class="copyright-item">
-      <span>原文链接: </span>
+      <span>Link: </span>
       <a href="http://p2yang.github.io/2020/01/16/gtm-variables/">http://p2yang.github.io/2020/01/16/gtm-variables/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
+      <span>License: </span>
       
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -314,13 +314,13 @@
       <a class="prev" href="/blog/2020/01/19/webpack-dll/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Webpack DllPlugin 基本应用与实践</span>
-        <span class="prev-text nav-mobile">上一篇</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
       <a class="next" href="/blog/2020/01/15/gtm-basic/">
         <span class="next-text nav-default">Google Tag Manager 基本应用与实践</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -394,11 +394,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 -
+    Theme -
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
@@ -408,7 +408,7 @@
     
       2016 -
     
-    2020
+    2021
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

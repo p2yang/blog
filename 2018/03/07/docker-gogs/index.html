@@ -125,7 +125,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -134,7 +134,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -143,7 +143,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -152,7 +152,7 @@
         <li class="mobile-menu-item">
           
           
-            分类
+            Categories
           
         </li>
       </a>
@@ -173,7 +173,7 @@
           <a class="menu-item-link" href="/blog/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -182,7 +182,7 @@
           <a class="menu-item-link" href="/blog/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -191,7 +191,7 @@
           <a class="menu-item-link" href="/blog/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -200,7 +200,7 @@
           <a class="menu-item-link" href="/blog/categories/">
             
             
-              分类
+              Categories
             
           </a>
         </li>
@@ -242,7 +242,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本说明"><span class="toc-text">基本说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#拉取镜像"><span class="toc-text">拉取镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建本地资源文件"><span class="toc-text">创建本地资源文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置-service-文件"><span class="toc-text">配置 service 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动服务"><span class="toc-text">启动服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置nginx反向代理"><span class="toc-text">配置nginx反向代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备份"><span class="toc-text">备份</span></a></li></ol>
     </div>
@@ -267,7 +267,7 @@
 <p>至此，安装启动完成，访问 10080 端口即可！</p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>访问 <code>http://ip:port</code> 配置gogs服务。</p>
 <p>主要是配置 <code>数据库</code>、<code>域名</code>、<code>应用地址</code>。根据个人情况配置如下，其他默认：<br>数据库：SQLite3<br>域名：git.p2yang.com<br>应用地址：<a href="http://git.p2yang.com" target="_blank" rel="noopener">http://git.p2yang.com</a></p>
-<p>访问 git.p2yang.com:10080， 结果如图所示<br><img src="/images/gogs.png" alt="gogs"></p>
+<p>访问 git.p2yang.com:10080， 结果如图所示<br><img src="/blog/images/gogs.png" alt="gogs"></p>
 <h3 id="配置nginx反向代理"><a href="#配置nginx反向代理" class="headerlink" title="配置nginx反向代理"></a>配置nginx反向代理</h3><p>nginx 增加配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    server_name git.p2yang.com</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://139.196.54.203:10080;</span><br><span class="line">        proxy_set_header Host $host:80;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>监听<code>80</code>端口，代理到服务器<code>10080</code>端口。</p>
 <ul>
@@ -284,15 +284,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>原文作者: </span>
+      <span>Author: </span>
       <a href="http://p2yang.github.io">李二夜</a>
     </p>
     <p class="copyright-item">
-      <span>原文链接: </span>
+      <span>Link: </span>
       <a href="http://p2yang.github.io/2018/03/07/docker-gogs/">http://p2yang.github.io/2018/03/07/docker-gogs/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
+      <span>License: </span>
       
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -322,13 +322,13 @@
       <a class="prev" href="/blog/2018/03/22/zsh/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">白用了那么多年的 ‘oh-my-zsh’ -- Plugins</span>
-        <span class="prev-text nav-mobile">上一篇</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
       <a class="next" href="/blog/2018/01/30/parcel-vue-pug/">
         <span class="next-text nav-default">parcel-vue环境下pug支持实践</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -402,11 +402,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 -
+    Theme -
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
@@ -416,7 +416,7 @@
     
       2016 -
     
-    2020
+    2021
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

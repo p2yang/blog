@@ -125,7 +125,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -134,7 +134,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -143,7 +143,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -152,7 +152,7 @@
         <li class="mobile-menu-item">
           
           
-            分类
+            Categories
           
         </li>
       </a>
@@ -173,7 +173,7 @@
           <a class="menu-item-link" href="/blog/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -182,7 +182,7 @@
           <a class="menu-item-link" href="/blog/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -191,7 +191,7 @@
           <a class="menu-item-link" href="/blog/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -200,7 +200,7 @@
           <a class="menu-item-link" href="/blog/categories/">
             
             
-              分类
+              Categories
             
           </a>
         </li>
@@ -248,7 +248,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动化-Shell-脚本"><span class="toc-text">自动化 Shell 脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-Server-实现更新服务"><span class="toc-text">Node Server 实现更新服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-text">server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-反向代理"><span class="toc-text">nginx 反向代理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Webhook"><span class="toc-text">配置 Webhook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初次部署"><span class="toc-text">初次部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pm2-守护"><span class="toc-text">pm2 守护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先全局安装-pm2"><span class="toc-text">首先全局安装 pm2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动服务"><span class="toc-text">启动服务:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看服务列表"><span class="toc-text">查看服务列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看日志"><span class="toc-text">查看日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
     </div>
@@ -286,11 +286,11 @@
 <h3 id="nginx-反向代理"><a href="#nginx-反向代理" class="headerlink" title="nginx 反向代理"></a>nginx 反向代理</h3><p>配置 nginx 反向代理 <code>/deploy</code></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">···</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> handbook.p2yang.com;</span><br><span class="line">    ···</span><br><span class="line">    <span class="attribute">location</span> /deploy &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:6666;</span><br><span class="line">    &#125;</span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置-Webhook"><a href="#配置-Webhook" class="headerlink" title="配置 Webhook"></a>配置 Webhook</h2><p>Webhooks 在 Github 项目的 <code>Settings</code> 里。进入其中添加一个新的 webhook，如下图：</p>
-<p><img src="/images/github-webhook.png" alt="Github webhooks"></p>
+<p><img src="/blog/images/github-webhook.png" alt="Github webhooks"></p>
 <p>注意，由于我们上面使用的 <code>github-webhook-handler</code> 要求 <code>Content type</code> 必须设置成 <code>application/json</code>。<br><code>Payload URL</code> 和 <code>Secret</code> 值与 Server 配置需要保持一致。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = createHandler(&#123; <span class="attr">path</span>: <span class="string">'/deploy'</span>, <span class="attr">secret</span>: <span class="string">'xxx'</span> &#125;)</span><br></pre></td></tr></table></figure>
 <p>当服务全部配置成功后，webhook 的状态如下:</p>
-<p><img src="/images/github-webhook-status.png" alt="Github webhook push status"></p>
+<p><img src="/blog/images/github-webhook-status.png" alt="Github webhook push status"></p>
 <h2 id="初次部署"><a href="#初次部署" class="headerlink" title="初次部署"></a>初次部署</h2><p>第一次部署，需要先在目标服务器上 git clone 下项目代码。</p>
 <h2 id="pm2-守护"><a href="#pm2-守护" class="headerlink" title="pm2 守护"></a>pm2 守护</h2><p>这里使用 <code>pm2</code> 来守护 Server 更新服务。基本用法如下：</p>
 <h3 id="首先全局安装-pm2"><a href="#首先全局安装-pm2" class="headerlink" title="首先全局安装 pm2:"></a>首先全局安装 <code>pm2</code>:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install pm2 -g</span><br></pre></td></tr></table></figure>
@@ -310,15 +310,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>原文作者: </span>
+      <span>Author: </span>
       <a href="http://p2yang.github.io">李二夜</a>
     </p>
     <p class="copyright-item">
-      <span>原文链接: </span>
+      <span>Link: </span>
       <a href="http://p2yang.github.io/2019/03/18/webhooks-deploy/">http://p2yang.github.io/2019/03/18/webhooks-deploy/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
+      <span>License: </span>
       
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -348,13 +348,13 @@
       <a class="prev" href="/blog/2020/01/15/gtm-basic/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Google Tag Manager 基本应用与实践</span>
-        <span class="prev-text nav-mobile">上一篇</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
       <a class="next" href="/blog/2019/01/17/node-draw-image/">
         <span class="next-text nav-default">Node 图片绘制及合成介绍</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -428,11 +428,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 -
+    Theme -
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
@@ -442,7 +442,7 @@
     
       2016 -
     
-    2020
+    2021
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>
